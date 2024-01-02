@@ -1,0 +1,170 @@
+[
+	{
+		"type":"professional",
+		"role":"Post-Doctoral Researcher",
+		"institute": "Università degli Studi di Firenze",
+		"location":"Florence, Italy",
+		"department":"Dipartimento di Matematica e Informatica 'Ulisse Dini'",
+		"start":"2023-11-01",
+		"featured":true
+	}
+	,
+	{
+		"type":"professional",
+		"role":"Post-Doctoral Researcher",
+		"institute": "Technische Universiteit Delft",
+		"location":"Delft, The Netherlands (remote)",
+		"department":"Maritime and Transport Technology",
+		"start":"2023-11-01",
+		"featured":true
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Inria Sophia Antipolis-Mediterranee",
+		"location":"Sophia-Antipolis, France",
+		"visiting":"dr. A. Mantzaflaris",
+		"start":"2019-10-01",
+		"end":"2019-12-01",
+		"duration": "9 weeks",
+		"featured":false
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Johannes Keppler Universität",
+		"location":"Linz, Austria",
+		"visiting":"dr. P. Weinmüller, dr. A. Farahat, dr. T. Takacs",
+		"start":"2021-10-01",
+		"end":"2021-10-01",
+		"duration": "1 week",
+		"featured":false
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Inria Sophia Antipolis-Mediterranee",
+		"location":"Sophia-Antipolis, France",
+		"visiting":"dr. A. Mantzaflaris",
+		"start":"2021-11-01",
+		"end":"2021-11-01",
+		"duration": "5 weeks",
+		"featured":false
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Inria Sophia Antipolis-Mediterranee",
+		"location":"Sophia-Antipolis, France",
+		"visiting":"dr. A. Mantzaflaris",
+		"start":"2022-06-01",
+		"end":"2022-07-01",
+		"duration": "3 weeks",
+		"featured":false
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Bundeswehr Universität München",
+		"location":"München, Germany",
+		"visiting":"prof. dr. J. Kiendl",
+		"start":"2022-11-01",
+		"end":"2022-11-01",
+		"duration": "1 week",
+		"featured":false
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Università degli Studi di Firenze",
+		"location":"Florence, Italy",
+		"visiting":"dr. C. Giannelli",
+		"start":"2023-03-01",
+		"end":"2023-04-01",
+		"duration": "5 weeks",
+		"featured":false
+	}
+	,
+	{
+		"type":"visit",
+		"role":"Visiting PhD Student",
+		"institute": "Inria Sophia Antipolis-Mediterranee",
+		"location":"Sophia-Antipolis, France",
+		"visiting":"dr. A. Mantzaflaris",
+		"start":"2023-05-01",
+		"end":"2023-06-01",
+		"duration": "5 weeks",
+		"featured":false
+	}
+	,
+	{
+		"type":"voluntary",
+		"role":"Founder and board member",
+		"organization": "Maritime Technology Young Professionals (MTYP)",
+		"location":"Delft, The Netherlands",
+		"start":"2022-04-01",
+		"end":"2023-09-01",
+		"featured":false
+	}
+	,
+	{
+		"type":"voluntary",
+		"role":"Chairman",
+		"organization": "SIAM Student Chapter Delft",
+		"location":"Delft, The Netherlands",
+		"start":"2021-01-01",
+		"end":"2023-01-01",
+		"url":"https://sscdelft.github.io/",
+		"featured":false
+	}
+	,
+	{
+		"type":"voluntary",
+		"role":"Student Lecturer",
+		"organization": "Stichting Oud Geleerd Jong Gedaan",
+		"location":"Zuid-Holland, The Netherlands",
+		"start":"2020-09-01",
+		"end":"2023-04-01",		
+		"url":"https://www.oudgeleerdjonggedaan.nl/",
+		"featured":false
+	}
+	,
+	{
+		"type":"voluntary",
+		"role":"Board member",
+		"organization": "3mE PhD Council",
+		"location":"Delft, The Netherlands",
+		"start":"2021-04-01",
+		"end":"2023-09-01",
+		"url":"https://www.tudelft.nl/en/3me/research/graduate-school-3me/phd-council-3me/",
+		"featured":false
+	}
+	,
+	{
+		"type":"voluntary",
+		"role":"Chairman, Commissioner of Education",
+		"organization": "Society of Maritime Technology",
+		"location":"Delft, The Netherlands",
+		"start":"2017-04-01",
+		"end":"2019-09-01",
+		"url":"https://froude.nl/en/association/committees/smt",
+		"featured":false
+	}
+	,
+	{
+		"type":"voluntary",
+		"role":"Executive Board Member",
+		"organization": "Our Oceans Challenge",
+		"location":"The Netherlands",
+		"start":"2019-01-01",
+		"end":"2020-01-01",
+		"url":"http://www.ouroceanschallenge.org/",
+		"featured":false
+	}
+]
