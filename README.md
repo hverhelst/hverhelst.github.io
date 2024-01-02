@@ -1,2 +1,3 @@
-# Personal Website of Hugo Verhelst
-Website is based on the template simple_light of <a href="http://www.html5webtemplates.co.uk">HTML5webtemplates.co.uk</a></p>
+This Hugo website is under development.
+
+It is based on: [https://github.com/eddiewebb/hugo-resume](https://github.com/eddiewebb/hugo-resume)

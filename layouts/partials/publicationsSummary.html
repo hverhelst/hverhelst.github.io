@@ -1,0 +1,149 @@
+{{ $data := .Scratch.Get "pages" }}
+<div class="my-auto">
+    {{ $theses := where $data "entry-type" "eq" "thesis" }}
+    {{ if gt $theses 0}}
+    <h3>Theses</h3>
+    {{ range sort $theses "description.year" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">
+            <a href = "
+              {{ if .description.url }}
+                {{ .description.url }}
+              {{ else if .description.doi }}
+                https://doi.org/{{ .description.doi }}
+              {{ else }}
+                {{.}}
+              {{ end }}"
+              >
+              {{ .description.title | markdownify }}
+            </a>
+          </h4>
+          <div class="subheading mb-0">
+            <i>
+              {{ .description.school | markdownify }}, {{ .description.degree | markdownify }} ({{ time.Format "2006" .description.date }})
+            </i>
+          </div>
+          <div></div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">{{ .description.author }}</span>
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{ $unpublisheds := where $data "entry-type" "eq" "unpublished" }}
+    {{ if gt $unpublisheds 0}}
+    <h3>Articles in preparation</h3>
+    {{ range sort $unpublisheds "description.year" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">
+            <a href = "
+              {{ if .description.url }}
+                {{ .description.url }}
+              {{ else if .description.doi }}
+                https://doi.org/{{ .description.doi }}
+              {{ else }}
+                {{.}}
+              {{ end }}"
+              >
+              {{ .description.title | markdownify }}
+            </a>
+          </h4>
+          <div class="subheading mb-0">
+            <i>
+            {{ if .description.eprint }}
+              {{ .description.eprint | markdownify }}
+            {{ end }}
+            </i>
+          </div>
+          <div></div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">{{ .description.author }}</span>
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{ $articles := where $data "entry-type" "eq" "article" }}
+    {{ if gt $articles 0}}
+    <h3>Peer-reviewed journal articles</h3>
+    {{ range sort $articles "description.year" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">
+            <a href = "
+              {{ if .description.url }}
+                {{ .description.url }}
+              {{ else if .description.doi }}
+                https://doi.org/{{ .description.doi }}
+              {{ else }}
+                {{ .Site.GetPage }}
+              {{ end }}"
+              >
+              {{ .description.title | markdownify }}
+            </a>
+          </h4>
+          <div class="subheading mb-0">
+            <i>{{ .description.journal | markdownify }}</i>, 
+            <b>{{ .description.volume | markdownify }}</b>
+             {{ if .description.issue }}
+                ({{ .description.issue | markdownify }}), 
+                {{ if .description.pages }}
+                  {{ .description.pages | markdownify  }} 
+                {{ end }}
+            {{ end }}
+            ({{ .description.year | markdownify  }}) 
+          </div>
+          <div></div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">{{ .description.author }}</span>
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+
+    {{ $proceedings := where $data "entry-type" "eq" "inproceeding" }}
+    {{ if gt $proceedings 0}}
+    <h3>Conference proceedings</h3>
+    {{ range sort $proceedings "description.year" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">
+            <a href = "
+              {{ if .description.url }}
+                {{ .description.url }}
+              {{ else if .description.doi }}
+                https://doi.org/{{ .description.doi }}
+              {{ else }}
+                .
+              {{ end }}"
+              >
+              {{ .description.title | markdownify }}
+            </a>
+          </h4>
+          <div class="subheading mb-0">
+            <i>{{ .description.booktitle | markdownify }}, {{ .description.series | markdownify }}</i>, 
+            <b>{{ .description.volume | markdownify }}</b>
+              {{ if .description.number }}
+                ({{ .description.number | markdownify }}), 
+              {{ end }}
+              {{ if .description.pages }}
+                {{ .description.pages | markdownify  }} 
+              {{ end }}
+              ({{ .description.year | markdownify  }}) 
+          </div>
+          <div></div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">{{ .description.author }}</span>
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+
+ </div>

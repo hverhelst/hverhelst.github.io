@@ -1,0 +1,66 @@
+{{ $data := .Scratch.Get "pages" }}
+
+<div class="my-auto">
+    {{ $inviteds := where $data "invited" true }}
+    {{ if gt $inviteds 0}}
+    <h3>Invited presentations</h3>
+    {{ range sort $inviteds ".year" "desc" }}
+    {{ .description.title }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">
+            <a href = "
+              {{ if .url }}
+                {{ .url }}
+              {{ else }}
+                {{.}}
+              {{ end }}"
+              >
+              {{ .name | markdownify }}
+            </a>
+          </h4>
+          <div class="subheading mb-0">{{ .title | markdownify }}</div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">{{ .location }}, <i>{{ .range }}</i></span>
+        </div>
+      </div>
+      {{ end }}
+    {{ end }}
+</div>
+
+<div class="my-auto">
+  {{ $notinvited := where $data "invited" "eq" nil }}
+  {{ $notinvited := $notinvited | append (where $data "invited" "eq" false) }}
+
+  {{ $year := "" }}
+  {{ range sort $notinvited "year" "desc"}}
+  {{ $itemYear := .year }}
+  {{ if ne $year $itemYear }}
+  {{ $year = $itemYear }}
+  <h3>{{ $year }}</h3>
+  {{ end }}
+
+  <div class="resume-item d-flex flex-column flex-md-row mb-3">
+    <div class="resume-content mr-auto">
+      <h4 class="mb-0">
+        <a href = "
+          {{ if .url }}
+            {{ .url }}
+          {{ else }}
+            {{.}}
+          {{ end }}"
+          >
+          {{ .name | markdownify }}
+        </a>
+      </h4>
+      <div class="subheading mb-0">{{ .title | markdownify }}</div>
+    </div>
+    <div class="resume-date text-md-right">
+      <span class="text-primary">{{ .location }}, <i>{{ .range }}</i></span>
+    </div>
+  </div>
+
+
+  {{ end }}
+</div>

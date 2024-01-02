@@ -1,0 +1,87 @@
+[
+	{
+		"degree":"Maritime Technology",
+		"level": "BSc",
+		"course": "1st Integration Project (MT1453)",
+		"university": "Technische Universiteit Delft",
+		"start":"2015-01-01",
+		"end":"2016-01-01",
+		"duration": "1 semesters",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=39839",
+		"role": "CAD Software Assistant",
+		"featured":true
+	},
+	{
+		"degree":"Maritime Technology",
+		"level": "BSc",
+		"course": "Strength of Ships (MT2432)",
+		"university": "Technische Universiteit Delft",
+		"start":"2016-01-01",
+		"end":"2017-01-01",
+		"duration": "1 quarter",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=39852",
+		"role": "DIC Practical Assistant",
+		"featured":false
+	},
+	{
+		"degree":"Maritime Technology",
+		"level": "BSc",
+		"course": "Geometry and Stability of Ships (MT2431)",
+		"university": "Technische Universiteit Delft",
+		"start":"2015-01-01",
+		"end":"2017-01-01",
+		"duration": "2 quarters",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=53567&_NotifyTextSearch_",
+		"role": "CAD Software Assistant",
+		"featured":false
+	},
+	{
+		"degree":"Maritime Technology",
+		"level": "BSc",
+		"course": "2nd Integration Project (MT2434)",
+		"university": "Technische Universiteit Delft",
+		"start":"2015-01-01",
+		"end":"2019-01-01",
+		"duration": "3 semesters",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=53568&_NotifyTextSearch_",
+		"role": "Teaching and CAD Software Assistant",
+		"featured":false
+	},
+	{
+		"degree":"Applied Mathematics",
+		"level": "MSc",
+		"course": "Computational Fluid Dynamics (WI4011-17)",
+		"university": "Technische Universiteit Delft",
+		"start":"2020-01-01",
+		"end":"2021-01-01",
+		"duration": "1 semester",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=49328&_NotifyTextSearch_",
+		"role": "Teaching Assistant",
+		"featured":true
+	},
+	{
+		"degree":"Civil, Mechanical and Aerospace Engineering",
+		"level": "BSc",
+		"course": "Numerical Methods for Differential Equations (WI3097TU/TW3730TU/CTB2400)",
+		"university": "Technische Universiteit Delft",
+		"start":"2020-01-01",
+		"end":"2023-01-01",
+		"duration": "6 quarters",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=55192&_NotifyTextSearch_",
+		"role": "Digital Teaching Assistant",
+		"featured":true
+	},
+	{
+		"degree":"Maritime Technology",
+		"level": "MSc",
+		"course": "Fluid-Structure Interaction in Marine Structures (MT44090)",
+		"university": "Technische Universiteit Delft",
+		"start":"2020-01-01",
+		"end":"2022-01-01",
+		"duration": "2 quarters",
+		"url": "https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=55192&_NotifyTextSearch_",
+		"role": "Lecturer",
+		"featured":true
+	}
+
+]

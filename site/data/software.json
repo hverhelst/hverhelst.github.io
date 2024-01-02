@@ -1,0 +1,33 @@
+[
+	{
+		"name":"Geometry + Simulation Modules (G+Smo) - Core",
+		"role":"Developer",
+		"description": "G+Smo (pronounced gismo or gizmo) is a C++ library for isogeometric analysis (IGA). Geometry plus simulation modules aims at the seamless integration of Computer-aided Design (CAD) and Finite Element Analysis (FEA).",
+		"url": "https://github.com/gismo/gismo",
+		"featured":true
+	}
+	,
+	{
+		"name":"Geometry + Simulation Modules (G+Smo) - gsKLShell",
+		"role":"Main developer",
+		"description": "gsKLShell is the module in G+Smo implementing the isogeometric Kirchhoff-Love shell formulation. gsKLShell offers geometric and material non-linearities, error estimators using the Dual-Weighted Residual method, and more.",
+		"url": "https://github.com/gismo/gsKLShell",
+		"featured":true
+	}
+	,
+	{
+		"name":"Geometry + Simulation Modules (G+Smo) - gsStructuralAnalysis",
+		"role":"Main developer",
+		"description": "The gsStructuralAnalysis module provides routines for structural analysis in G+Smo. Besides conventional routines for buckling, post-buckling, static and modal analysis, it provides a parallel arc-length method.",
+		"url": "https://github.com/gismo/gsStructuralAnalysis",
+		"featured":true
+	}
+	,
+	{
+		"name":"Geometry + Simulation Modules (G+Smo) - gsUnstructuredSplines",
+		"role":"Main developer",
+		"description": "The gsUnstructuredSplines module provides unstructured spline constructions for isogeometric analysis in G+Smo, enabling multi-patch isogeometric analysis.",
+		"url": "https://github.com/gismo/gsUnstructuredSplines",
+		"featured":true
+	}
+]

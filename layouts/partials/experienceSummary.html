@@ -1,0 +1,103 @@
+{{ $data := .Scratch.Get "pages" }}
+<div class="my-auto">
+      {{ $professional := where $data "type" "eq" "professional" }}
+      {{ if gt $professional 0 }}
+      <h3>Professional</h3>  
+      {{ end }}
+
+      {{ $events := slice }}
+      {{ range $professional }}
+        {{ $event := . }}
+        {{ $parsedItem := dict }}
+        {{ range $k, $v := $event }}
+        {{ if eq $k "start" }}
+          {{ $parsedItem = merge $parsedItem (dict $k (time $v)) }}
+        {{ else }}
+          {{ $parsedItem = merge $parsedItem (dict $k $v) }}
+        {{ end }}
+        {{ end }}
+      {{ $events = $events | append $parsedItem }}
+      {{ end }}
+
+
+      {{ range sort $events "date" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">{{ .institute | markdownify }}, {{ .department | markdownify }}</h4>
+          <div class="subheading mb-0">{{ .role }}</div>
+          <div>{{ .location | markdownify }}</div>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">
+            {{ time.Format "02-01-2006" .start }} - 
+            {{ if .end }}
+              {{ time.Format "02-01-2006" .end }}
+            {{ else }}
+              present
+            {{ end }}
+          </span>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ $visit := where $data "type" "eq" "visit" }}
+      {{ if gt $visit 0}}
+      <h3>Research visits</h3>  
+      {{ end }}
+
+    {{ .Scratch.Set "list" $visit}}
+    {{ .Scratch.Set "item" "graduation"}}
+    {{ partial "sortDates" . }}
+    {{ $visitSorted := .Scratch.Get "sortedList" }}
+
+
+      {{ range sort $visitSorted "date" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">{{ .institute | markdownify }}</h4>
+          <div class="subheading mb-0">{{ .role }} (visiting {{ .visiting }})</div>
+          <div>{{ .location | markdownify }}</div>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">
+            {{ time.Format "02-01-2006" .start }} - 
+            {{ time.Format "02-01-2006" .end }} 
+            ({{ .duration }})
+          </span>
+        </div>
+      </div>
+      {{ end }}
+
+      {{ $voluntary := where $data "type" "eq" "voluntary" }}
+      {{ if gt $voluntary 0}}
+      <h3>Voluntary</h3>  
+      {{ end }}
+
+    {{ .Scratch.Set "list" $voluntary}}
+    {{ .Scratch.Set "item" "start"}}
+    {{ partial "sortDates" . }}
+    {{ $voluntarySorted := .Scratch.Get "sortedList" }}
+
+      {{ range sort $voluntarySorted "date" "desc" }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-3">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">{{ .organization | markdownify }}</h4>
+          <div class="subheading mb-0">{{ .role }}</div>
+          <div>{{ .location | markdownify }}</div>
+          <p>{{ .description | markdownify }}</p>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">
+            {{ time.Format "02-01-2006" .start }} - 
+            {{ if .end }}
+              {{ time.Format "02-01-2006" .end }}
+            {{ else }}
+              present
+            {{ end }}
+          </span>
+        </div>
+      </div>
+      {{ end }}
+ </div>

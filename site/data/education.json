@@ -1,0 +1,56 @@
+[
+    {
+        "school":"[Technische Universiteit Delft](https://tudelft.nl)",
+        "degree":"Doctor of Philosophy",
+        "major":"",
+        "notes":"",
+        "start":"2019-09-01",
+        "end":"2024-01-18",
+        "thesis":"Isogeometric analysis of wrinkling",
+        "thesislink":"https://doi.org/10.4233/uuid:0e4c3644-31a4-4157-983d-bd001d91b8ca",
+        "supervisors":"dr. M. Möller, dr. ir. J.H. Den Besten",
+        "featured":true
+    },
+    {
+    	"school":"[Technische Universiteit Delft](https://tudelft.nl)",
+    	"degree":"Master of Science",
+    	"major":"Maritime Technology",
+    	"notes":"Cum Laude, Honours",
+    	"start":"2016-09-01",
+        "end":"2019-07-22",
+        "thesis":"Modelling Wrinkling Behaviour of Large Floating Thin Offshore Structures: An application of Isogeometric Structural Analysis for Post-Buckling Analyses",
+        "thesislink":"http://resolver.tudelft.nl/uuid:56c0cc91-643d-4817-9702-93fedce5fd78",
+        "supervisors":"prof. dr. ir. M.L. Kaminksi, dr. ir. F.J. Vermolen, dr. M. Möller, dr. ir. J.H. Den Besten",
+        "featured":true
+    },
+    {
+        "school":"[Technische Universiteit Delft](https://tudelft.nl)",
+        "degree":"Master of Science",
+        "major":"Applied Mathematics Technology",
+        "notes":"Cum Laude",
+        "start":"2016-09-01",
+        "end":"2019-07-22",
+        "thesis":"Modelling Wrinkling Behaviour of Large Floating Thin Offshore Structures: An application of Isogeometric Structural Analysis for Post-Buckling Analyses",
+        "thesislink":"http://resolver.tudelft.nl/uuid:56c0cc91-643d-4817-9702-93fedce5fd78",
+        "supervisors":"prof. dr. ir. M.L. Kaminksi, dr. ir. F.J. Vermolen, dr. M. Möller, dr. ir. J.H. Den Besten",
+        "featured":true
+    },
+    {
+        "school":"[Technische Universiteit Delft](https://tudelft.nl)",
+        "degree":"Bachelor of Science",
+        "major":"Maritime Technology",
+        "notes":"Cum Laude, Honours",
+        "start":"2013-09-01",
+        "end":"2016-07-01",
+        "featured":true
+    },
+    {
+        "school":"[Maaswaal College Wijchen](https://maaswaalcollege.nl)",
+        "degree":"Voorbereidend Middelbaar Onderwijs (VWO)",
+        "major":"",
+        "notes":"",
+        "start":"2006-09-01",
+        "end":"2013-07-01",
+        "featured":false
+    }
+]

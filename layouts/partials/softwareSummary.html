@@ -1,0 +1,23 @@
+{{ $data := .Scratch.Get "pages" }}
+<div class="my-auto">
+  {{ range $data }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">
+          <a href = "
+              {{ if .url }}
+                {{ .url }}
+              {{ else }}
+                {{.}}
+              {{ end }}"
+              >
+              {{ .name | markdownify }}
+            </a></h4>
+          <div>{{ .description | markdownify }}</div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">{{ .role }}</span>
+        </div>
+      </div>
+      {{ end }}
+ </div>

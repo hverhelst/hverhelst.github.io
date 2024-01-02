@@ -1,0 +1,16 @@
+{{ $List := .Scratch.Get "list" }}
+{{ $key := .Scratch.Get "key" }}
+{{ $sortedList := slice }}
+{{ range $List }}
+  {{ $event := . }}
+  {{ $parsedItem := dict }}
+  {{ range $k, $v := $event }}
+  {{ if eq $k (printf "%s" $key) }}
+    {{ $parsedItem = merge $parsedItem (dict $k (time $v)) }}
+  {{ else }}
+    {{ $parsedItem = merge $parsedItem (dict $k $v) }}
+  {{ end }}
+  {{ end }}
+{{ $sortedList = $sortedList | append $parsedItem }}
+{{ end }}
+{{ .Scratch.Set "sortedList" $sortedList }}

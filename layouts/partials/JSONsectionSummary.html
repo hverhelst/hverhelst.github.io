@@ -1,0 +1,18 @@
+{{ $secID := .Scratch.Get "sectionId" }}
+{{ $data := index .Site.Data $secID }}
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="{{ $secID }}">
+  <div class="my-auto" id="projects-content">
+    <div class=" pb-2 pt-3">
+      <!-- <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2> -->
+      <h2><a href={{ printf "%s" .Permalink}}>{{ i18n $secID }}</a></h2>
+    </div>
+    {{ $featuredPages := where $data "featured" true }}
+    {{ .Scratch.Set "pages" $featuredPages }} 
+    {{ partial (printf "%s%s" $secID "Summary") . }}
+    </div>
+  {{ if gt $data $featuredPages }}
+    <div class="my-auto">
+      <p>Go to the full list of all <a href={{ printf "%s" .Permalink}}>{{ i18n $secID | pluralize }}</a></p>
+    </div>
+  {{ end }}
+</section>

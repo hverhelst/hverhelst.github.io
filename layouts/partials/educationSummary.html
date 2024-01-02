@@ -1,0 +1,36 @@
+{{ $data := .Scratch.Get "pages" }}
+<div class="my-auto">
+  {{ range $data }}
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+          <h4 class="mb-0">{{ .school | markdownify }}</h4>
+          <div class="subheading mb-0">{{ .degree }} {{ if .notes }}({{ .notes | markdownify }}){{ end }}
+          </div>
+          <div>
+            {{ if .thesis }}
+              {{ if .thesislink }}
+            <b>Thesis:</b> <a href="{{ .thesislink }}">{{ .thesis | markdownify }}</a>
+              {{ end }}
+            {{ end }}
+          </div>
+          <div>
+            {{ if .supervisors }}
+              {{ if .thesislink }}
+            <b>Supervisors:</b> {{ .supervisors | markdownify }}
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+        <div class="resume-date text-md-right">
+          <span class="text-primary">
+            {{ time.Format "2006" .start }} - 
+            {{ if .end }}
+              {{ time.Format "2006" .end }}
+            {{ else }}
+              present
+            {{ end }}
+          </span>
+        </div>
+      </div>
+      {{ end }}
+ </div>
