@@ -133,7 +133,7 @@
 			"title": "An Adaptive Parallel Arc-Length Method",
 			"author": "H. M. Verhelst, J. H. Den Besten & M. Möller",
 			"pages": "107300",
-			"https://doi.org/10.1016/j.compstruc.2024.107300"
+			"url":"https://doi.org/10.1016/j.compstruc.2024.107300"
 		},
 		"featured":true
 	}
@@ -148,7 +148,7 @@
 			"title": "Goal-Adaptive Meshing of Isogeometric Kirchhoff-Love Shells",
 			"author": "H. M. Verhelst, A. Mantzaflaris, M. Möller & J. H. Den Besten",
 			"pages": "1-28",
-			"https://doi.org/10.1007/s00366-024-01958-4"
+			"url":"https://doi.org/10.1007/s00366-024-01958-4"
 		},
 		"featured":true
 	}
