@@ -153,7 +153,7 @@
 	}
 	,
 	{
-		"name":"8th European Congress on Computational Methods in Applied Sciences and Engineering",
+		"name":"8th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS)",
 		"location": "Oslo, Norway",
 		"title":"A Parallel Adaptive Arc-Length Method",
 		"range":"05-06-2022 - 09-06-2022",
@@ -209,7 +209,7 @@
 		"range":"05-11-2022 - 09-11-2022",
 		"year":"2022",
 		"url":"https://iga2022.sciencesconf.org/",
-		"featured":true
+		"featured":false
 	}
 	,
 	{
@@ -223,10 +223,10 @@
 	}
 	,
 	{
-		"name":"International Conference on Isogeometric Analysis (IGA2022)",
+		"name":"International Conference on Isogeometric Analysis (IGA2023)",
 		"location": "Lyon, France",
 		"title":"Hyperelastic Wrinkling Analysis Using Tension-Field Theory In Isogeometric Analysis",
-		"range":"18-06-2022 - 21-06-2022",
+		"range":"18-06-2023 - 21-06-2023",
 		"year":"2023",
 		"url":"https://iga2023.sciencesconf.org/",
 		"featured":true
@@ -236,7 +236,7 @@
 		"name":"Workshop on Topology Optimisation and Isogeometric Analysis",
 		"location": "Linz, Austria",
 		"title":"Isogeometric Analysis of Wrinkling ",
-		"range":"30-10-2022 - 31-10-2022",
+		"range":"30-10-2023 - 31-10-2023",
 		"year":"2023",
 		"url":"https://www.oeaw.ac.at/ricam/news-events/workshops/topology-optimization-and-isogeometric-analysis",
 		"featured":true,
@@ -247,10 +247,40 @@
 		"name":"26th Engineering Mechanics Symposium, Workshop on Advanced Discretization and Solution Techniques",
 		"location": "Papendal, Arnhem",
 		"title":"Isogeometric Analysis of Wrinkling ",
-		"range":"30-10-2022 - 31-10-2022",
+		"range":"30-10-2023 - 31-10-2023",
 		"year":"2023",
 		"featured":true,
 		"invited":true
 
+	}
+	,
+	{
+		"name":"G+Smo Developer Days 2024",
+		"location": "Thessaloniki, Greece",
+		"title":"Advanced Algorithms for Time-Stepping and Fluid-Structure Interaction in G+Smo",
+		"range":"04-03-2024 - 06-03-2024",
+		"year":"2024",
+		"url":"https://github.com/gismo/gismo/wiki/G-Smo-Developer-Days-2024",
+		"featured":false
+	}
+	,
+	{
+		"name":"9th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS)",
+		"location": "Lisbon, Portugal",
+		"title":"A unified framework for advanced spline constructions in Isogeometric Analysis",
+		"range":"03-06-2024 - 07-06-2024",
+		"year":"2024",
+		"url":"https://www.eccomas2024.org/frontal/default.asp",
+		"featured":true
+	}
+	,
+	{
+		"name":"PDESoft 2024",
+		"location": "Cambridge, United Kingdom",
+		"title":"G+Smo: Geometry + Simulation Modules for Isogeometric Analysis",
+		"range":"01-07-2024 - 03-07-2024",
+		"year":"2024",
+		"url":"https://pdesoft.org/",
+		"featured":true
 	}
 ]

@@ -80,5 +80,16 @@
 		"cosupervisors": "dr. M. Möller",
 		"role": "Daily supervisor",
 		"featured":true
-	}
+	},
+	{
+		"name":"Jingya Li",
+		"university": "Technische Universiteit Delft",
+		"degree": "Applied Mathematics",
+		"title":"Isogeometric Fluid-Structure Interaction",
+		"level": "PhD",
+		"graduation":"present",
+		"cosupervisors": "dr. M. Möller, dr. ir. J.H. Den Besten",
+		"role": "External supervisor",
+		"featured":true
+	},
 ]

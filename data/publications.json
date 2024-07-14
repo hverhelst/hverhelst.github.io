@@ -110,34 +110,45 @@
 	,
 	{
 		"cite-key": "Leonetti2024",
-		"entry-type": "unpublished",
+		"entry-type": "article",
 		"description": {
-			"title": "A Hierarchical Isogeometric Solid-Shell Model for General Hyperelastic Materials",
-			"author": "L. Leonetti & H. M. Verhelst"
+			"publisher": "Springer",
+			"journal": "Computational Mechanics",
+			"year": "2024",
+			"title": "A hierarchic isogeometric hyperelastic solid-shell",
+			"author": "L. Leonetti, H. M. Verhelst",
+			"pages": "1-20",
+			"url":"https://doi.org/10.1007/s00466-024-02452-w"
 		},
 		"featured":false
 	}
 	,
 	{
 		"cite-key": "Verhelst2024a",
-		"entry-type": "unpublished",
+		"entry-type": "article",
 		"description": {
+			"publisher": "Elsevier",
+			"journal": "Computers & Structures",
+			"year": "2024",
 			"title": "An Adaptive Parallel Arc-Length Method",
 			"author": "H. M. Verhelst, J. H. Den Besten & M. Möller",
-			"eprint": "arXiv preprint arXiv:2303.01075",
-			"url": "http://arxiv.org/abs/2303.01075"
+			"pages": "107300",
+			"https://doi.org/10.1016/j.compstruc.2024.107300"
 		},
 		"featured":true
 	}
 	,
 	{
 		"cite-key": "Verhelst2024b",
-		"entry-type": "unpublished",
+		"entry-type": "article",
 		"description": {
+			"publisher": "Springer",
+			"journal": "Engineering with Computers",
+			"year": "2024",
 			"title": "Goal-Adaptive Meshing of Isogeometric Kirchhoff-Love Shells",
 			"author": "H. M. Verhelst, A. Mantzaflaris, M. Möller & J. H. Den Besten",
-			"eprint": "arXiv preprint arXiv:2307.08356",
-			"url": "http://arxiv.org/abs/2307.08356"
+			"pages": "1-28",
+			"https://doi.org/10.1007/s00366-024-01958-4"
 		},
 		"featured":true
 	}
