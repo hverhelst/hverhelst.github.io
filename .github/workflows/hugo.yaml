@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+      - actions
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -65,7 +66,7 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"    
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
