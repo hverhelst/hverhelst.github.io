@@ -34,10 +34,6 @@ link = "https://github.com/hverhelst/"
 name = "GitHub"
 
 [[params.handles]]
-link = "https://x.com/HugoVerhelst"
-name = "Twitter"
-
-[[params.handles]]
 link = "https://orcid.org/0000-0001-8677-862X"
 name = "ORCID"
 
