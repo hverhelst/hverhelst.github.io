@@ -3,7 +3,7 @@
   {{ range $data }}
       <div class="resume-item d-flex flex-column flex-md-row mb-5">
         <div class="resume-content mr-auto">
-          <h4 class="mb-0">{{ .school | markdownify }}</h4>
+          <h4 class="mb-0" href="{{ .schoollink }}">{{ .school | markdownify }}</h4>
           <div class="subheading mb-0">{{ .degree }} {{ if .notes }}({{ .notes | markdownify }}){{ end }}
           </div>
           <div>

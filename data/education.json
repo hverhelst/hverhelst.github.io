@@ -1,6 +1,7 @@
 [
     {
-        "school":"[Technische Universiteit Delft](https://tudelft.nl)",
+        "school":"Technische Universiteit Delft",
+        "schoollink":"https://tudelft.nl",
         "degree":"Doctor of Philosophy",
         "major":"",
         "notes":"Cum Laude",
@@ -12,11 +13,12 @@
         "featured":true
     },
     {
-    	"school":"[Technische Universiteit Delft](https://tudelft.nl)",
-    	"degree":"Master of Science",
-    	"major":"Maritime Technology",
-    	"notes":"Cum Laude, Honours",
-    	"start":"2016-09-01",
+        "school":"Technische Universiteit Delft",
+        "schoollink":"https://tudelft.nl",
+        "degree":"Master of Science",
+        "major":"Maritime Technology",
+        "notes":"Cum Laude, Honours",
+        "start":"2016-09-01",
         "end":"2019-07-22",
         "thesis":"Modelling Wrinkling Behaviour of Large Floating Thin Offshore Structures: An application of Isogeometric Structural Analysis for Post-Buckling Analyses",
         "thesislink":"http://resolver.tudelft.nl/uuid:56c0cc91-643d-4817-9702-93fedce5fd78",
@@ -24,7 +26,8 @@
         "featured":true
     },
     {
-        "school":"[Technische Universiteit Delft](https://tudelft.nl)",
+        "school":"Technische Universiteit Delft",
+        "schoollink":"https://tudelft.nl",
         "degree":"Master of Science",
         "major":"Applied Mathematics Technology",
         "notes":"Cum Laude",
@@ -36,7 +39,8 @@
         "featured":true
     },
     {
-        "school":"[Technische Universiteit Delft](https://tudelft.nl)",
+        "school":"Technische Universiteit Delft",
+        "schoollink":"https://tudelft.nl",
         "degree":"Bachelor of Science",
         "major":"Maritime Technology",
         "notes":"Cum Laude, Honours",
@@ -45,8 +49,9 @@
         "featured":true
     },
     {
-        "school":"[Maaswaal College Wijchen](https://maaswaalcollege.nl)",
-        "degree":"Voorbereidend Middelbaar Onderwijs (VWO)",
+        "school":"Maaswaal College Wijchen",
+        "schoollink":"https://maaswaalcollege.nl",
+        "degree":"Voorbereidend Wetenschappelijk Onderwijs",
         "major":"",
         "notes":"",
         "start":"2006-09-01",
