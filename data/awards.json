@@ -2,10 +2,11 @@
 	{
 		"type":"award",
 		"title":"Bezieno Award for the best PhD Thesis in Solid Mechanics in the Netherlands",
-		"location": "Royal Institute for Engineers (KIVI) and Engineering Mechanics Graduate School",
+		"location": "Royal Institute for Engineers (KIVI) & Engineering Mechanics Graduate School",
 		"year":"2024",
 		"featured":true
 	}
+	,
 	{
 		"type":"award",
 		"title":"Best presentation in the session Advanced Discretization Methods",
