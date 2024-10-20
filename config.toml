@@ -1,4 +1,4 @@
-baseURL = "https://hugoverhelst.nl/"
+baseURL = "https://hverhelst.github.io/"
 languageCode = "en-us"
 title = "Hugo Verhelst"
 dateFormat = "January 2, 2006"
