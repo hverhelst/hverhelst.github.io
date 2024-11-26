@@ -1,4 +1,14 @@
 [
+        {
+                "type":"professional",
+                "role":"Post-Doctoral Researcher",
+                "institute": "Università di Pavia",
+                "location":"Pavia, Italy",
+                "department":"Dipartimento di Ingegneria Civile e Architettura",
+                "start":"2024-11-01",
+                "featured":true
+        }
+        ,
 	{
 		"type":"professional",
 		"role":"Post-Doctoral Researcher",
@@ -6,6 +16,7 @@
 		"location":"Florence, Italy",
 		"department":"Dipartimento di Matematica e Informatica 'Ulisse Dini'",
 		"start":"2023-11-01",
+		"end":"2024-10-31",
 		"featured":true
 	}
 	,
@@ -16,6 +27,7 @@
 		"location":"Delft, The Netherlands (remote)",
 		"department":"Maritime and Transport Technology",
 		"start":"2023-11-01",
+		"end":"2024-10-31",
 		"featured":true
 	}
 	,

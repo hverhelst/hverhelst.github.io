@@ -5,9 +5,8 @@ dateFormat = "January 2, 2006"
 
 
 [params]
-address = "Florence, Italy"
-email = "h.m.verhelst@tudelft.nl"
-email2 = "hugomaarten.verhelst@unifi.it"
+address = "Pavia, Italy"
+email = "hugomaarten.verhelst@unipv.it"
 firstName = "Hugo"
 lastName = "Verhelst"
 phone = ""
