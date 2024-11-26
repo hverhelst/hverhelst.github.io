@@ -24,7 +24,7 @@
 			"school":"Technische Universiteit Delft",
 			"degree":"Master of Science"
 		},
-		"featured":true
+		"featured":false
 	}
 	,
 	{
@@ -40,7 +40,7 @@
 			"pages": "2975 - 2984",
 			"url":"https://doi.org/10.1007/s11948-020-00254-w"
 		},
-		"featured":true
+		"featured":false
 	}
 	,
 	{
@@ -73,7 +73,7 @@
 			"pages": "103075",
 			"url":"https://doi.org/10.1016/j.cad.2021.103075"
 		},
-		"featured":true
+		"featured":false
 	}
 	,
 	{
@@ -114,10 +114,11 @@
 		"description": {
 			"publisher": "Springer",
 			"journal": "Computational Mechanics",
+                        "volume": "74",
 			"year": "2024",
 			"title": "A hierarchic isogeometric hyperelastic solid-shell",
 			"author": "L. Leonetti, H. M. Verhelst",
-			"pages": "1-20",
+			"pages": "723-742",
 			"url":"https://doi.org/10.1007/s00466-024-02452-w"
 		},
 		"featured":false
@@ -129,6 +130,7 @@
 		"description": {
 			"publisher": "Elsevier",
 			"journal": "Computers & Structures",
+                        "volume": "296",
 			"year": "2024",
 			"title": "An Adaptive Parallel Arc-Length Method",
 			"author": "H. M. Verhelst, J. H. Den Besten & M. Möller",
@@ -151,5 +153,16 @@
 			"url":"https://doi.org/10.1007/s00366-024-01958-4"
 		},
 		"featured":true
-	}
+	},
+        {
+                "cite-key": "Verhelst2024c",
+                "entry-type": "unpublished",
+                "description": {
+                        "title": "A Wrinkling Model for General Hyperelastic Materials based on Tension Field Theory",
+                        "author": "H. M. Verhelst, M. Möller & J. H. Den Besten",
+       			"eprint": "arXiv:2410.16990",
+                        "url":"https://arxiv.org/abs/2410.16990"
+                },
+                "featured":true
+        }
 ]
