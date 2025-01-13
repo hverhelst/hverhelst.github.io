@@ -2,6 +2,10 @@
 name: Deploy Hugo site to Pages
 
 on:
+  # Runs every Sunday at 00:00
+  schedule:
+  - cron: "0 0 * * 0"
+
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
