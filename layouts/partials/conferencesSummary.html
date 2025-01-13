@@ -22,7 +22,12 @@
           <div class="subheading mb-0">{{ .title | markdownify }}</div>
         </div>
         <div class="resume-date text-md-right">
-          <span class="text-primary">{{ .location }}, <i>{{ .range }}</i></span>
+          <span class="text-primary">
+            {{ time.Format "02-01-2006" .start }}
+            {{ if .end }}
+              - {{ time.Format "02-01-2006" .end }}
+            {{ end }}
+          </span>
         </div>
       </div>
       {{ end }}
@@ -34,8 +39,8 @@
   {{ $notinvited := $notinvited | append (where $data "invited" "eq" false) }}
 
   {{ $year := "" }}
-  {{ range sort $notinvited "year" "desc"}}
-  {{ $itemYear := .year }}
+  {{ range sort $notinvited "start" "desc"}}
+  {{ $itemYear := time.Format "2006" .start }}
   {{ if ne $year $itemYear }}
   {{ $year = $itemYear }}
   <h3>{{ $year }}</h3>
@@ -57,7 +62,12 @@
       <div class="subheading mb-0">{{ .title | markdownify }}</div>
     </div>
     <div class="resume-date text-md-right">
-      <span class="text-primary">{{ .location }}, <i>{{ .range }}</i></span>
+      <span class="text-primary">
+        {{ time.Format "02-01-2006" .start }}
+        {{ if .end }}
+          - {{ time.Format "02-01-2006" .end }}
+        {{ end }}
+      </span>
     </div>
   </div>
 

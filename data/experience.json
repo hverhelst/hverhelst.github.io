@@ -1,14 +1,14 @@
 [
-        {
-                "type":"professional",
-                "role":"Post-Doctoral Researcher",
-                "institute": "Università di Pavia",
-                "location":"Pavia, Italy",
-                "department":"Dipartimento di Ingegneria Civile e Architettura",
-                "start":"2024-11-01",
-                "featured":true
-        }
-        ,
+	{
+			"type":"professional",
+			"role":"Post-Doctoral Researcher",
+			"institute": "Università di Pavia",
+			"location":"Pavia, Italy",
+			"department":"Dipartimento di Ingegneria Civile e Architettura",
+			"start":"2024-11-01",
+			"featured":true
+	}
+	,
 	{
 		"type":"professional",
 		"role":"Post-Doctoral Researcher",
@@ -142,7 +142,7 @@
 		"organization": "Stichting Oud Geleerd Jong Gedaan",
 		"location":"Zuid-Holland, The Netherlands",
 		"start":"2020-09-01",
-		"end":"2023-04-01",		
+		"end":"2023-04-01",
 		"url":"https://www.oudgeleerdjonggedaan.nl/",
 		"featured":false
 	}

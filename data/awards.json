@@ -26,6 +26,7 @@
 	{
 		"type":"award",
 		"title":"SIAM Student Travel Award for the GD/SPM21 conference 2021",
+		"location":"Society of Industrial and Applied Mathematics",
 		"year":"2021",
 		"featured":false
 	}
@@ -43,7 +44,8 @@
 		"organization":"Engineering Mechanics research school",
 		"member":"Student member",
 		"url":"https://engineeringmechanics.nl/",
-		"range":"2020 - 2023",
+		"start":"2020-09-01",
+		"end":"2023-11-01",
 		"featured":false
 	}
 	,
@@ -52,7 +54,8 @@
 		"organization":"Society of Industrial and Applied Mathematics (SIAM)",
 		"member":"Student member",
 		"url":"https://siam.org/",
-		"range":"2020 - present",
+		"start":"2020-09-01",
+		"end":"2023-11-01",
 		"featured":true
 	}
 	,
@@ -61,7 +64,8 @@
 		"organization":"Open Science Community Delft (OSC Delft)",
 		"member":"Member",
 		"url":"https://osc-delft.github.io//",
-		"range":"2021 - present",
+		"start":"2021-01-01",
+		"end":"",
 		"featured":true
 	}
 ]

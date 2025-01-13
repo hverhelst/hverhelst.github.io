@@ -35,7 +35,14 @@
           <p>{{ .description | markdownify }}</p>
         </div>
         <div class="resume-date text-md-right">
-          <span class="text-primary">{{ .range }}</span>
+          <span class="text-primary">
+            {{ time.Format "2006" .start }} -
+            {{ if .end }}
+              {{ time.Format "2006" .end }}
+            {{ else }}
+              present
+            {{ end }}
+          </span>
         </div>
       </div>
       {{ end }}

@@ -36,6 +36,10 @@ name = "GitHub"
 link = "https://orcid.org/0000-0001-8677-862X"
 name = "ORCID"
 
+[[params.handles]]
+link = "https://scholar.google.com/citations?user=7cTDjzYAAAAJ&hl=en&oi=ao"
+name = "Google Scholar"
+
 [outputs]
 home = ["HTML", "JSON"]
 

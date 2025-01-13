@@ -20,7 +20,12 @@
       {{ end }}
       {{ if .Site.Params.showContact}}
           <li class="nav-item">
-            <a class="nav-link" href="/contact">{{ i18n "contact" }}</a>
+            <a class="nav-link" href="/">{{ i18n "contact" }}</a>
+          </li>
+      {{ end }}
+      {{ if .Site.Params.CVlink}}
+        <li class="nav-item">
+            <a class="nav-link" href="/{{ .Site.Params.CVlink }}">{{ i18n "CV" }}</a>
           </li>
       {{ end }}
     </ul>

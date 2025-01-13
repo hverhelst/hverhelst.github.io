@@ -3,38 +3,41 @@
 		"name":"Philosophy of Human-Technology Relations",
 		"location": "Enschede, The Netherlands",
 		"title":"Mass Surveillance for National Security: Unbalancing the Privacy-Security Dichotomy ",
-		"range":"11/07/2018 - 13/07/2018",
-		"year":"2018",
+		"start":"2018-07-11",
+		"end":"2018-07-13",
 		"url":"https://www.utwente.nl/en/phtr/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"20th International Ship and Offshore Structures Congress 2018",
 		"location": "Liege, Belgium & Amsterdam, The Netherlands",
 		"title":"(Organizational support)",
-		"range":"09/09/2018 - 13/09/2018",
-		"year":"2018",
+		"start":"2018-09-09",
+		"end":"2018-09-13",
 		"url":"http://www.issc2018.org/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"European Numerical Mathematics and Advanced Applications Conference 2019",
 		"location": "Egmond aan Zee, The Netherlands",
 		"title":"Equilibrium Path Analysis Including Bifurcations with an Arc-Length Method Avoiding A Priori Perturbations",
-		"range":"30/09/2019 - 04/10/2019",
-		"year":"2019",
+		"start":"2019-09-30",
+		"end":"2019-10-04",
 		"url":"https://www.enumath2019.eu/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"Society of Maritime Technology (Lunch Lecture)",
 		"location": "Delft, The Netherlands",
 		"title":"Flexible Floating Structure Design & Analysis: Hydro-Structural Design and Analysis Challenges",
-		"range":"03-11-2021",
-		"year":"2019",
+		"start":"2021-11-03",
+		"end":"",
 		"featured":false,
 		"invited":true
 	}
@@ -43,18 +46,19 @@
 		"name":"Virtual Isogeometric Analysis and Conference 2020",
 		"location": "Online",
 		"title":"Stretch-Based Hyperelastic Material Formulations for Isogeometric Kirchhoff-Love Shells",
-		"range":"11-08-2020 - 12-08-2020",
-		"year":"2020",
+		"start":"2020-08-11",
+		"end":"2020-08-12",
 		"url":"http://iga2020.usacm.org/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"SIAM Student Chapter Delft Workshop Day",
 		"location": "Online",
 		"title":"A Hands-On Tutorial with Nonlinear Shells",
-		"range":"10-10-2021",
-		"year":"2021",
+		"start":"2021-10-10",
+		"end":"",
 		"featured":false,
 		"invited":true
 	}
@@ -63,58 +67,63 @@
 		"name":"G+Smo Developer Days 2020",
 		"location": "Online",
 		"title":"Nonlinear Structural Analysis with G+Smo: implementations and applications",
-		"range":"09-12-2020 - 11-12-2020",
-		"year":"2020",
+		"start":"2020-12-09",
+		"end":"2020-12-11",
 		"url":"https://github.com/gismo/gismo/wiki/G-Smo-developer-days-2020",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"SIAM Annual Meeting (AN21)",
 		"location": "Online",
 		"title":"Goal-Adaptive Meshing for Non-Linear Isogeometric Shell Analysis",
-		"range":"19-07-2021 - 21-07-2021",
-		"year":"2021",
+		"start":"2021-07-19",
+		"end":"2021-07-21",
 		"url":"https://www.siam.org/conferences/cm/conference/an21",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"16th U.S. National Congress on Computational Mechanics",
 		"location": "Online",
 		"title":"Goal-adaptive meshing for structural shell analysis problems",
-		"range":"25-07-2021 - 29-07-2021",
-		"year":"2021",
+		"start":"2021-07-25",
+		"end":"2021-07-29",
 		"url":"http://16.usnccm.org/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"International Conference on Isogeometric Analysis (IGA2021)",
 		"location": "Online",
 		"title":"Goal-adaptive meshing for structural shell analysis problems",
-		"range":"26-09-2021 - 29-09-2021",
-		"year":"2021",
+		"start":"2021-09-26",
+		"end":"2021-09-29",
 		"url":"https://iga2021.sciencesconf.org/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"SIAM Conference on Geometric and Physical Modeling (GD/SPM21)",
 		"location": "Online",
 		"title":"Stretch-Based Hyperelastic Material Formulations for Isogeometric Kirchhoff-Love Shells",
-		"range":"27-09-2021 - 29-09-2021",
-		"year":"2021",
+		"start":"2021-09-27",
+		"end":"2021-09-29",
 		"url":"https://www.siam.org/conferences/cm/conference/gdspm21",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"24th Engineering Mechanics Symposium, Workshop on High Performance Computing",
 		"location": "Papendal, The Netherlands",
 		"title":"A Parallel Adaptive Arc-Length Method",
-		"range":"26-10-2021, 02-11-2021",
-		"year":"2021",
+		"start":"2021-10-26",
+		"end":"2021-11-02",
 		"url":"https://engineeringmechanics.nl/symposium/",
 		"featured":false,
 		"invited":true
@@ -124,8 +133,8 @@
 		"name":"Society of Maritime Technology (Lunch Lecture)",
 		"location": "Delft, The Netherlands",
 		"title":"Modelling Wrinkles in Membranes: Fundamentals, Challenges and Applications ",
-		"range":"11-11-2021",
-		"year":"2021",
+		"start":"2021-11-11",
+		"end":"",
 		"featured":false,
 		"invited":true
 	}
@@ -134,18 +143,19 @@
 		"name":"G+Smo Developer Days 2021",
 		"location": "Sophia-Antipolis, France",
 		"title":"A Parallel Adaptive Arc-Length Method",
-		"range":"06-12-2021 - 10-12-2021",
-		"year":"2021",
+		"start":"2021-12-06",
+		"end":"2021-12-10",
 		"url":"https://github.com/gismo/gismo/wiki/G-Smo-developer-days-2021",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"Dutch-Flemish Scientific Computing Society - 2022 Spring Meeting",
 		"location": "Leuven, Belgium",
 		"title":"On the modeling of wrinkling instabilities using isogeometric shell analysis",
-		"range":"06-05-2022",
-		"year":"2022",
+		"start":"2022-05-06",
+		"end":"",
 		"url":"https://wsc.project.cwi.nl/spring-symposium/2022-meeting",
 		"featured":true,
 		"invited":true,
@@ -153,91 +163,98 @@
 	}
 	,
 	{
-		"name":"8th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS)",
+		"name":"8th European Congress on Computational Methods in Applied Sciences and Engineering",
 		"location": "Oslo, Norway",
 		"title":"A Parallel Adaptive Arc-Length Method",
-		"range":"05-06-2022 - 09-06-2022",
-		"year":"2022",
+		"start":"2022-06-05",
+		"end":"2022-06-09",
 		"url":"https://www.eccomas2022.org/frontal/default.asp",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"9th GACM Colloquium on Computational Mechanics",
 		"location": "Essen, Germany",
 		"title":"A Parallel Adaptive Arc-Length Method",
-		"range":"21-09-2022 - 23-09-2022",
-		"year":"2022",
-		"url":"https://colloquia.gacm.de/2022/organisation",
-		"featured":false
+		"start":"2022-09-21",
+		"end":"2022-09-23",
+		"url":"https://colloquia.gacm.de/2022-organisation",
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"GIMC SIMAI YOUNG 2022 Workshop",
 		"location": "Pavia, Italy",
 		"title":"Comparison of smooth multipatch constructions for IGA",
-		"range":"29-09-2022 - 30-09-2022",
-		"year":"2022",
+		"start":"2022-09-29",
+		"end":"2022-09-30",
 		"url":"http://gimcsimaiyoung2022.unipv.it/workshop/",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"G+Smo Developer Days 2022 and preCICE meeting",
 		"location": "Delft, The Netherlands",
 		"title":"A first attempt of preCICE in G+Smo",
-		"range":"10-10-2022 - 14-10-2022",
-		"year":"2022",
+		"start":"2022-10-10",
+		"end":"2022-10-14",
 		"url":"https://github.com/gismo/gismo/wiki/G-Smo-Developer-Days-2022-and-preCICE-meeting",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"G+Smo Developer Days 2022 and preCICE meeting",
 		"location": "Delft, The Netherlands",
 		"title":"Comparison of smooth multipatch constructions for IGA",
-		"range":"10-10-2022 - 14-10-2022",
-		"year":"2022",
+		"start":"2022-10-10",
+		"end":"2022-10-14",
 		"url":"https://github.com/gismo/gismo/wiki/G-Smo-Developer-Days-2022-and-preCICE-meeting",
-		"featured":false
+		"featured":false,
+		"invited":false
 	}
 	,
 	{
 		"name":"International Conference on Isogeometric Analysis (IGA2022)",
 		"location": "Banff, Canada",
 		"title":"Goal-Adaptive Isogeometric Kirchhoff-Love Shell Analysis for Structural Analysis Applications",
-		"range":"05-11-2022 - 09-11-2022",
-		"year":"2022",
+		"start":"2022-11-05",
+		"end":"2022-11-09",
 		"url":"https://iga2022.sciencesconf.org/",
-		"featured":false
+		"featured":true,
+		"invited":false
 	}
 	,
 	{
 		"name":"Society of Maritime Technology (Lunch Lecture)",
 		"location": "Delft, The Netherlands",
 		"title":"Flexible Floating Solar Platforms: New Challenges for Offshore Engineering ",
-		"range":"20-02-2022",
-		"year":"2023",
+		"start":"2022-02-20",
+		"end":"",
 		"featured":false,
 		"invited":true
 	}
 	,
 	{
-		"name":"International Conference on Isogeometric Analysis (IGA2023)",
+		"name":"International Conference on Isogeometric Analysis (IGA2022)",
 		"location": "Lyon, France",
 		"title":"Hyperelastic Wrinkling Analysis Using Tension-Field Theory In Isogeometric Analysis",
-		"range":"18-06-2023 - 21-06-2023",
-		"year":"2023",
+		"start":"2022-06-18",
+		"end":"2022-06-21",
 		"url":"https://iga2023.sciencesconf.org/",
-		"featured":true
+		"featured":true,
+		"invited":false
 	}
 	,
 	{
 		"name":"Workshop on Topology Optimisation and Isogeometric Analysis",
 		"location": "Linz, Austria",
 		"title":"Isogeometric Analysis of Wrinkling ",
-		"range":"30-10-2023 - 31-10-2023",
-		"year":"2023",
+		"start":"2022-10-30",
+		"end":"2022-10-31",
 		"url":"https://www.oeaw.ac.at/ricam/news-events/workshops/topology-optimization-and-isogeometric-analysis",
 		"featured":true,
 		"invited":true
@@ -247,19 +264,18 @@
 		"name":"26th Engineering Mechanics Symposium, Workshop on Advanced Discretization and Solution Techniques",
 		"location": "Papendal, Arnhem",
 		"title":"Isogeometric Analysis of Wrinkling ",
-		"range":"30-10-2023 - 31-10-2023",
-		"year":"2023",
+		"start":"2022-10-30",
+		"end":"2022-10-31",
 		"featured":true,
 		"invited":true
-
 	}
 	,
 	{
 		"name":"G+Smo Developer Days 2024",
 		"location": "Thessaloniki, Greece",
 		"title":"Advanced Algorithms for Time-Stepping and Fluid-Structure Interaction in G+Smo",
-		"range":"04-03-2024 - 06-03-2024",
-		"year":"2024",
+		"start":"2024-03-04",
+		"end":"2024-03-06",
 		"url":"https://github.com/gismo/gismo/wiki/G-Smo-Developer-Days-2024",
 		"featured":false
 	}
@@ -268,8 +284,8 @@
 		"name":"9th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS)",
 		"location": "Lisbon, Portugal",
 		"title":"A unified framework for advanced spline constructions in Isogeometric Analysis",
-		"range":"03-06-2024 - 07-06-2024",
-		"year":"2024",
+		"start":"2024-06-03",
+		"end":"2024-06-07",
 		"url":"https://www.eccomas2024.org/frontal/default.asp",
 		"featured":true
 	}
@@ -278,8 +294,8 @@
 		"name":"PDESoft 2024",
 		"location": "Cambridge, United Kingdom",
 		"title":"G+Smo: Geometry + Simulation Modules for Isogeometric Analysis",
-		"range":"01-07-2024 - 03-07-2024",
-		"year":"2024",
+		"start":"2024-07-01",
+		"end":"2024-07-03",
 		"url":"https://pdesoft.org/",
 		"featured":true
 	}

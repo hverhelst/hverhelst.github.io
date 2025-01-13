@@ -2,7 +2,7 @@
 <div class="my-auto">
       {{ $professional := where $data "type" "eq" "professional" }}
       {{ if gt $professional 0 }}
-      <h3>Professional</h3>  
+      <h3>Professional</h3>
       {{ end }}
 
       {{ $events := slice }}
@@ -30,7 +30,7 @@
         </div>
         <div class="resume-date text-md-right">
           <span class="text-primary">
-            {{ time.Format "02-01-2006" .start }} - 
+            {{ time.Format "02-01-2006" .start }} -
             {{ if .end }}
               {{ time.Format "02-01-2006" .end }}
             {{ else }}
@@ -43,7 +43,7 @@
 
       {{ $visit := where $data "type" "eq" "visit" }}
       {{ if gt $visit 0}}
-      <h3>Research visits</h3>  
+      <h3>Research visits</h3>
       {{ end }}
 
     {{ .Scratch.Set "list" $visit}}
@@ -62,8 +62,8 @@
         </div>
         <div class="resume-date text-md-right">
           <span class="text-primary">
-            {{ time.Format "02-01-2006" .start }} - 
-            {{ time.Format "02-01-2006" .end }} 
+            {{ time.Format "02-01-2006" .start }} -
+            {{ time.Format "02-01-2006" .end }}
             ({{ .duration }})
           </span>
         </div>
@@ -72,7 +72,7 @@
 
       {{ $voluntary := where $data "type" "eq" "voluntary" }}
       {{ if gt $voluntary 0}}
-      <h3>Voluntary</h3>  
+      <h3>Voluntary</h3>
       {{ end }}
 
     {{ .Scratch.Set "list" $voluntary}}
@@ -90,7 +90,7 @@
         </div>
         <div class="resume-date text-md-right">
           <span class="text-primary">
-            {{ time.Format "02-01-2006" .start }} - 
+            {{ time.Format "02-01-2006" .start }} -
             {{ if .end }}
               {{ time.Format "02-01-2006" .end }}
             {{ else }}

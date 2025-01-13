@@ -5,7 +5,6 @@ description: NA
 weight: 10
 sitemap:
   priority: 1.0
-  weight: 0.5
 ---
 
 <a href="http://google.com">hi</a>
