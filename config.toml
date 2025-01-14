@@ -25,20 +25,30 @@ sections = ["education","experience","awards","publications","conferences","soft
 trackerID = "XX-123446-01"
 
 [[params.handles]]
-link = "https://www.linkedin.com/in/hugo-verhelst/"
 name = "LinkedIn"
+link = "https://www.linkedin.com/in/hugo-verhelst/"
 
 [[params.handles]]
-link = "https://github.com/hverhelst/"
 name = "GitHub"
+link = "https://github.com/hverhelst/"
 
 [[params.handles]]
-link = "https://orcid.org/0000-0001-8677-862X"
 name = "ORCID"
+link = "https://orcid.org/0000-0001-8677-862X"
 
 [[params.handles]]
-link = "https://scholar.google.com/citations?user=7cTDjzYAAAAJ&hl=en&oi=ao"
 name = "Google Scholar"
+link = "https://scholar.google.com/citations?user=7cTDjzYAAAAJ&hl=en&oi=ao"
+
+[[params.handles]]
+name = "BlueSky"
+link = "https://bsky.app/profile/hugoverhelst.nl"
+logo = "bluesky"
+
+[params.meta]
+description = "Hugo Verhelst's personal website"
+author      = "Hugo Verhelst"
+favicon     = true
 
 [outputs]
 home = ["HTML", "JSON"]
