@@ -16,7 +16,7 @@
 		"title":"(Organizational support)",
 		"start":"2018-09-09",
 		"end":"2018-09-13",
-		"url":"http://www.issc2018.org/",
+		"url":"https://www.issc2018.org/",
 		"featured":false,
 		"invited":false
 	}
@@ -48,7 +48,7 @@
 		"title":"Stretch-Based Hyperelastic Material Formulations for Isogeometric Kirchhoff-Love Shells",
 		"start":"2020-08-11",
 		"end":"2020-08-12",
-		"url":"http://iga2020.usacm.org/",
+		"url":"https://iga2020.usacm.org/",
 		"featured":false,
 		"invited":false
 	}
@@ -91,7 +91,7 @@
 		"title":"Goal-adaptive meshing for structural shell analysis problems",
 		"start":"2021-07-25",
 		"end":"2021-07-29",
-		"url":"http://16.usnccm.org/",
+		"url":"https://16.usnccm.org/",
 		"featured":false,
 		"invited":false
 	}
@@ -190,7 +190,7 @@
 		"title":"Comparison of smooth multipatch constructions for IGA",
 		"start":"2022-09-29",
 		"end":"2022-09-30",
-		"url":"http://gimcsimaiyoung2022.unipv.it/workshop/",
+		"url":"https://gimcsimaiyoung2022.unipv.it/workshop/",
 		"featured":false,
 		"invited":false
 	}

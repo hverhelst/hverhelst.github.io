@@ -45,7 +45,7 @@ For the ones who want to stay for one or more nights in Delft in the period betw
 
 * [The Social Hub Delft](https://www.thesocialhub.co/delft/) is a modern hotel next to the train station of Delft. Using the code **TUDELFT2024**, you can get a 15% discount on Deluxe Queen (€84/night), Executive Queen (€89/night) and Deluxe King (€92/night) rooms.
 
-* [Hotel Johannes Vermeer](http://www.hotelvermeer.nl/) is an authentic hotel in the city center of Delft. They offer normal double rooms (€99/night) and deluxe double rooms (€117/night) for maximum two people, a deluxe room with an extra bed (€147/night) for three people and family rooms (€154/night) for four people. You can get a discount by mentioning my name in your booking.
+* [Hotel Johannes Vermeer](https://www.hotelvermeer.nl/) is an authentic hotel in the city center of Delft. They offer normal double rooms (€99/night) and deluxe double rooms (€117/night) for maximum two people, a deluxe room with an extra bed (€147/night) for three people and family rooms (€154/night) for four people. You can get a discount by mentioning my name in your booking.
 
 Since Delft is located between Rotterdam and Den Haag, one could also book a room in those cities. There are trains running between the main stations all day and night.
 

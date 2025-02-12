@@ -7,5 +7,5 @@ sitemap:
   priority: 1.0
 ---
 
-<a href="http://google.com">hi</a>
+<a href="https://google.com">hi</a>
 Proven Software Platform Engineer with experience leveraging agile, DevOps, and CI/CD to manage large scale distributed platforms both on prem and in public cloud.
