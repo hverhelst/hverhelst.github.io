@@ -27,27 +27,27 @@ trackerID = "XX-123446-01"
 [[params.handles]]
 name = "LinkedIn"
 link = "https://www.linkedin.com/in/hugo-verhelst/"
-logo = "linkedin-in"
+icon = "linkedin-in"
 
 [[params.handles]]
 name = "GitHub"
 link = "https://github.com/hverhelst/"
-logo = "github"
+icon = "github"
 
 [[params.handles]]
 name = "ORCID"
 link = "https://orcid.org/0000-0001-8677-862X"
-logo = "orcid"
+icon = "orcid"
 
 [[params.handles]]
 name = "Google Scholar"
 link = "https://scholar.google.com/citations?user=7cTDjzYAAAAJ&hl=en&oi=ao"
-logo = "google-scholar"
+icon = "google-scholar"
 
 [[params.handles]]
 name = "BlueSky"
 link = "https://bsky.app/profile/hugoverhelst.nl"
-logo = "bluesky"
+icon = "bluesky"
 
 [params.meta]
 description = "Hugo Verhelst's personal website"
