@@ -45,8 +45,10 @@
     {{ block "main" . }}
       {{ .Content }}
     {{ end }}
-    <section><span style="color: #999999;">Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </span>
+    <!-- <section><span style="color: #999999;">Nifty <a href="https://codepen.io/wbeeftink/pen/dIaDH">tech tag lists</a> from <a class="pen-owner-link" href="https://codepen.io/wbeeftink">Wouter Beeftink</a> </span>
       {{ with $.GitInfo }}{{ with $.Site.Params.gitCommitPrefix }} | <span style="color: #999999;;">Page content generated from commit: <a href="{{ . }}/{{ $.GitInfo.AbbreviatedHash }}" title="log: {{ $.GitInfo.Subject }}">{{ $.GitInfo.AbbreviatedHash }}</a>{{ end }}{{end}}
+    </section> -->
+    <section><span style="color: #999999;">Hugo's website runs with <a href="https://gohugo.io/">Hugo</a> based on the <a href="https://github.com/eddiewebb/hugo-resume">hugo-resume</a> template.</span>
     </section>
   </div>
   <!-- Bootstrap core JavaScript -->
