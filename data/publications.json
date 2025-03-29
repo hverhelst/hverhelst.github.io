@@ -114,7 +114,7 @@
 		"description": {
 			"publisher": "Springer",
 			"journal": "Computational Mechanics",
-                        "volume": "74",
+			"volume": "74",
 			"year": "2024",
 			"title": "A hierarchic isogeometric hyperelastic solid-shell",
 			"author": "L. Leonetti, H. M. Verhelst",
@@ -130,7 +130,7 @@
 		"description": {
 			"publisher": "Elsevier",
 			"journal": "Computers & Structures",
-                        "volume": "296",
+			"volume": "296",
 			"year": "2024",
 			"title": "An Adaptive Parallel Arc-Length Method",
 			"author": "H. M. Verhelst, J. H. Den Besten & M. Möller",
@@ -154,15 +154,35 @@
 		},
 		"featured":true
 	},
-        {
-                "cite-key": "Verhelst2024c",
-                "entry-type": "unpublished",
-                "description": {
-                        "title": "A Wrinkling Model for General Hyperelastic Materials based on Tension Field Theory",
-                        "author": "H. M. Verhelst, M. Möller & J. H. Den Besten",
-       			"eprint": "arXiv:2410.16990",
-                        "url":"https://arxiv.org/abs/2410.16990"
-                },
-                "featured":true
-        }
+	{
+		"cite-key": "Verhelst2025",
+		"entry-type": "article",
+		"description": {
+			"publisher": "Elsevier",
+			"journal": "Computer Methods in Applied Mechanics and Engineering",
+			"volume": "[In production]",
+			"year": "2025",
+			"title": "A Wrinkling Model for General Hyperelastic Materials based on Tension Field Theory",
+			"author": "H. M. Verhelst, M. Möller & J. H. Den Besten",
+			"pages": "116659",
+			"eprint": "arXiv:2410.16990",
+			"url":"https://arxiv.org/abs/2410.16990"
+		},
+		"featured":true
+	},
+	{
+		"cite-key": "Ji2024",
+		"entry-type": "incollection",
+		"description": {
+			"author":"Y. Ji, M. Möller, H. M. Verhelst",
+			"title": "Design Through Analysis",
+			"pages": "303-368",
+			"booktitle":"Fluids Under Control",
+			"publisher":"Springer International Publishing",
+			"year":"2023",
+			"editor":"T. Bodnár, G. P. Galdi, Š. Nečasová",
+			"url":"https://link.springer.com/chapter/10.1007/978-3-031-47355-5_5"
+		},
+		"featured":true
+}
 ]
