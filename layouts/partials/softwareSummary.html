@@ -13,7 +13,25 @@
               >
               {{ .name | markdownify }}
             </a></h4>
-          <div>{{ .description | markdownify }}</div>
+          <div class="resume-content">
+            {{ .description | markdownify }}
+          </div>
+          <div class="resume-content">
+            <b>Source(s)</b>:
+            <a href = "
+              {{ if .url }}
+                {{ .url }}
+              {{ else }}
+                {{.}}
+              {{ end }}"
+              >
+              GitHub
+            </a>
+            {{ if .url }}
+            |
+            <a href="https://doi.org/{{ .doi }}">DOI</a>
+            {{ end }}
+          </div>
         </div>
         <div class="resume-date text-md-right">
           <span class="text-primary">{{ .role }}</span>
