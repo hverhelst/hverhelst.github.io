@@ -160,13 +160,13 @@
 		"description": {
 			"publisher": "Elsevier",
 			"journal": "Computer Methods in Applied Mechanics and Engineering",
-			"volume": "[In production]",
+			"volume": "441",
 			"year": "2025",
 			"title": "A Wrinkling Model for General Hyperelastic Materials based on Tension Field Theory",
 			"author": "H. M. Verhelst, M. Möller & J. H. Den Besten",
-			"pages": "116659",
+			"pages": "117955",
 			"eprint": "arXiv:2410.16990",
-			"url":"https://arxiv.org/abs/2410.16990"
+			"url":"https://doi.org/10.1016/j.cma.2025.117955"
 		},
 		"featured":true
 	},
