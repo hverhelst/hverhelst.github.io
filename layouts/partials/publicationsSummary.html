@@ -35,7 +35,7 @@
 
     {{ $unpublisheds := where $data "entry-type" "eq" "unpublished" }}
     {{ if gt $unpublisheds 0}}
-    <h3>Articles in preparation</h3>
+    <h3>Pre-prints</h3>
     {{ range sort $unpublisheds "description.year" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
         <div class="resume-content mr-auto">

@@ -183,6 +183,20 @@
 			"editor":"T. Bodnár, G. P. Galdi, Š. Nečasová",
 			"url":"https://link.springer.com/chapter/10.1007/978-3-031-47355-5_5"
 		},
+		"featured":false
+	},
+	{
+		"cite-key": "Li2025",
+		"entry-type": "unpublished",
+		"description": {
+			"publisher": "Elsevier",
+			"year": "2025",
+			"title": "IsoGeometric Suitable Coupling Methods for Partitioned Multiphysics Simulation with Application to Fluid-Structure Interaction",
+			"author": "J.-Y. Li, H. M. Verhelst, H. Den Besten & M. Möller",
+			"pages": "117955",
+			"eprint": "arXiv:2505.19346",
+			"url":"https://doi.org/10.48550/arXiv.2505.19346"
+		},
 		"featured":true
-}
+	}
 ]
