@@ -6,6 +6,6 @@ sitemap:
 outputs:
 - html
 ---
- Hey! I'm Hugo Verhelst, a post-doctoral researcher at the Department of Civil Engineering and Architecture at the University of Pavia (Italy). 
+ Hey! I'm Hugo Verhelst, a post-doctoral researcher at the Department of Mechanical Engineering at Eindhoven University of Technology.
 
- My current work focusses on the development of structural analysis tools for thin membrane structures at sea, using the mathematical concept of Isogeometric Analysis. In particular, I mainly contribute to the field of computational structural analysis and I am a co-developer of the [Geometry+Simulation Modules (G+Smo)](https://github.com/gismo).
+ My current work focusses on numerical methods for solid and fluid mechanics, using the mathematical concept of Isogeometric Analysis (IGA). In particular, I mainly contribute to the fields of adaptive meshing for IGA, phase-field fracture and data-driven analysis. In addition, I am a main developer of the  [Geometry+Simulation Modules (G+Smo)](https://github.com/gismo).
