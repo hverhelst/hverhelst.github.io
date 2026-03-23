@@ -186,16 +186,56 @@
 		"featured":false
 	},
 	{
-		"cite-key": "Li2025",
-		"entry-type": "unpublished",
+		"cite-key": "Li2026",
+		"entry-type": "article",
 		"description": {
-			"publisher": "Elsevier",
-			"year": "2025",
+			"publisher": "Springer",
+			"journal": "Engineering with Computers",
+			"volume": "42",
+			"year": "2026",
 			"title": "IsoGeometric Suitable Coupling Methods for Partitioned Multiphysics Simulation with Application to Fluid-Structure Interaction",
 			"author": "J.-Y. Li, H. M. Verhelst, H. Den Besten & M. Möller",
-			"pages": "117955",
 			"eprint": "arXiv:2505.19346",
-			"url":"https://doi.org/10.48550/arXiv.2505.19346"
+			"url":"https://doi.org/10.1007/s00366-026-02299-0"
+		},
+		"featured":true
+	},
+	{
+		"cite-key": "VentaVinuela2026",
+		"entry-type": "article",
+		"description": {
+			"publisher": "Elsevier",
+			"journal": "Computer Methods in Applied Mechanics and Engineering",
+			"volume": "455",
+			"year": "2026",
+			"pages": "118855",
+			"title": "Effective phase-field modeling of the Cahn–Hilliard equation in 2D and 3D using a quasi-interpolation approach to adaptive isogeometric analysis with THB-splines",
+			"author": "L. Venta Viñuela, H.M. Verhelst, A. Mantzaflaris, C. Giannelli, A. Reali",
+			"url":"https://doi.org/10.1016/j.cma.2026.118855"
+		},
+		"featured":true
+	},
+	{
+		"cite-key": "Verhelst2025b",
+		"entry-type": "unpublished",
+		"description": {
+			"year": "2025",
+			"title": "Isogeometric multi-patch shell analysis using the Geometry + Simulation Modules",
+			"author": "H.M. Verhelst, A. Mantzaflaris, M. Möller",
+			"eprint": "arXiv:2508.10648",
+			"url":"https://doi.org/10.48550/arXiv.2508.10648"
+		},
+		"featured":true
+	},
+	{
+		"cite-key": "Verhelst2026a",
+		"entry-type": "unpublished",
+		"description": {
+			"year": "2026",
+			"title": "Adaptive isogeometric analysis of high-order phase-field fracture based on THB-splines",
+			"author": "H.M. Verhelst, L. Greco, A. Reali",
+			"eprint": "arXiv:2602.21685",
+			"url":"https://doi.org/10.48550/arXiv.2602.21685"
 		},
 		"featured":true
 	}
