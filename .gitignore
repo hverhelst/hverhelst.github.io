@@ -1,3 +1,6 @@
 .DS_Store
 compile.sh
 build/*
+public/
+static/doc/CV.pdf
+.hugo_build.lock

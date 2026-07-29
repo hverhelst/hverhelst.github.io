@@ -1,24 +1,19 @@
-{{ $data := .Scratch.Get "pages" }}
+{{ $data := .pages }}
 
 <div class="my-auto">
     {{ $PHD := where $data "level" "PhD" }}
-    {{ if gt $PHD 0}}
+    {{ if gt (len $PHD) 0}}
     <h3>PhD courses</h3>
 
-    {{ .Scratch.Set "list" $PHD}}
-    {{ .Scratch.Set "item" "start"}}
-    {{ partial "sortDates" . }}
-    {{ $PHDSorted := .Scratch.Get "sortedList" }}
-
-    {{ range sort $PHDSorted ".start" "desc" }}
+    {{ range sort $PHD "start" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .url }}
                 {{ .url }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .course | markdownify }}
@@ -29,7 +24,7 @@
           <b>Role</b>: {{ .role }}<br>
         </div>
       </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">
             {{ time.Format "2006" .start }} - 
             {{ time.Format "2006" .end }}
@@ -43,23 +38,18 @@
 
 <div class="my-auto">
     {{ $MSCs := where $data "level" "MSc" }}
-    {{ if gt $MSCs 0}}
+    {{ if gt (len $MSCs) 0}}
     <h3>Master courses</h3>
 
-    {{ .Scratch.Set "list" $MSCs}}
-    {{ .Scratch.Set "item" "graduation"}}
-    {{ partial "sortDates" . }}
-    {{ $MSCsSorted := .Scratch.Get "sortedList" }}
-
-    {{ range sort $MSCsSorted ".start" "desc" }}
+    {{ range sort $MSCs "start" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .url }}
                 {{ .url }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .course | markdownify }}
@@ -70,7 +60,7 @@
           <b>Role</b>: {{ .role }}<br>
         </div>
       </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">
             {{ time.Format "2006" .start }} - 
             {{ time.Format "2006" .end }}
@@ -84,23 +74,18 @@
 
 <div class="my-auto">
     {{ $BSCs := where $data "level" "BSc" }}
-    {{ if gt $BSCs 0}}
+    {{ if gt (len $BSCs) 0}}
     <h3>Bachelor courses</h3>
 
-    {{ .Scratch.Set "list" $BSCs}}
-    {{ .Scratch.Set "item" "graduation"}}
-    {{ partial "sortDates" . }}
-    {{ $BSCsSorted := .Scratch.Get "sortedList" }}
-
-    {{ range sort $BSCsSorted ".start" "desc" }}
+    {{ range sort $BSCs "start" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .url }}
                 {{ .url }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .course | markdownify }}
@@ -111,7 +96,7 @@
           <b>Role</b>: {{ .role }}<br>
         </div>
       </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">
             {{ time.Format "2006" .start }} - 
             {{ time.Format "2006" .end }}

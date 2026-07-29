@@ -2,9 +2,6 @@
 title: "Home"
 sitemap:
   priority : 1.0
-
-outputs:
-- html
 ---
  Hey! I'm Hugo Verhelst, a post-doctoral researcher at the Department of Mechanical Engineering at Eindhoven University of Technology.
 

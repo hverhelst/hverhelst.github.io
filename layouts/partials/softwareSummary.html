@@ -1,14 +1,14 @@
-{{ $data := .Scratch.Get "pages" }}
+{{ $data := .pages }}
 <div class="my-auto">
   {{ range $data }}
       <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
           <a href = "
               {{ if .url }}
                 {{ .url }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .name | markdownify }}
@@ -22,20 +22,21 @@
               {{ if .url }}
                 {{ .url }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               GitHub
             </a>
-            {{ if .url }}
+            {{ if .doi }}
             |
             <a href="https://doi.org/{{ .doi }}">DOI</a>
             {{ end }}
           </div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">{{ .role }}</span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .name "text" .details "image" .image "imageCaption" .imageCaption "url" .url "label" "Details") }}
       {{ end }}
  </div>

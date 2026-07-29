@@ -1,28 +1,21 @@
 baseURL = "https://hugoverhelst.nl/"
-languageCode = "en-us"
+locale = "en"
 title = "Hugo Verhelst"
 dateFormat = "January 2, 2006"
-
+disableKinds = ["taxonomy", "term"]
 
 [params]
-address = "Pavia, Italy"
-email = "hugomaarten.verhelst@unipv.it"
+address = "Eindhoven, The Netherlands"
+email = "h.m.verhelst@tue.nl"
 firstName = "Hugo"
 lastName = "Verhelst"
 phone = ""
 profileImage = "img/pasfotoTU.jpg"
 showQr = false
-showContact = false
 showSocializations = true
+CVlink = "doc/CV.pdf"
 
-pages = ['defense']
-sections = ["education","experience","awards","publications","conferences","software","teaching","supervision"]
-
-
-[params.google]
-
-[params.google.analytics]
-trackerID = "XX-123446-01"
+sections = ["news","education","experience","awards","publications","conferences","software","teaching","supervision"]
 
 [[params.handles]]
 name = "LinkedIn"
@@ -53,9 +46,6 @@ icon = "bluesky"
 description = "Hugo Verhelst's personal website"
 author      = "Hugo Verhelst"
 favicon     = true
-
-[outputs]
-home = ["HTML", "JSON"]
 
 [markup.goldmark.renderer]
 unsafe = true

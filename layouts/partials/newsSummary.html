@@ -1,0 +1,23 @@
+{{ $data := .pages }}
+<div class="my-auto">
+  {{ range sort $data "date" "desc" }}
+    <div class="resume-item d-flex flex-column flex-md-row mb-3">
+      <div class="resume-content me-auto">
+        <h4 class="mb-0">
+          {{ if .url }}
+            <a href="{{ .url }}">{{ .title | markdownify }}</a>
+          {{ else }}
+            {{ .title | markdownify }}
+          {{ end }}
+        </h4>
+        <div class="resume-content">
+          {{ .text | markdownify }}
+        </div>
+      </div>
+      <div class="resume-date text-md-end">
+        <span class="text-primary">{{ time.Format "January 2, 2006" .date }}</span>
+      </div>
+    </div>
+    {{ partial "recordDetails.html" (dict "title" .title "text" .details "image" .image "imageCaption" .imageCaption "url" .url "label" "Read more") }}
+  {{ end }}
+</div>

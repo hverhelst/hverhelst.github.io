@@ -1,0 +1,73 @@
+[
+	{
+		"date":"2026-06-01",
+		"title":"New paper: adaptive isogeometric analysis of the Cahn–Hilliard equation",
+		"text":"Our paper on effective phase-field modelling of the Cahn–Hilliard equation in 2D and 3D, using a quasi-interpolation approach to adaptive isogeometric analysis with THB-splines, appeared in Computer Methods in Applied Mechanics and Engineering.",
+		"url":"https://doi.org/10.1016/j.cma.2026.118855",
+		"featured":true
+	}
+	,
+	{
+		"date":"2026-03-22",
+		"title":"New paper: isogeometric coupling methods for partitioned multiphysics",
+		"text":"Together with J.-Y. Li, H. den Besten and M. Möller, our paper on IsoGeometric suitable coupling methods for partitioned multiphysics simulation, with application to fluid-structure interaction, appeared in Engineering with Computers.",
+		"url":"https://doi.org/10.1007/s00366-026-02299-0",
+		"featured":true
+	}
+	,
+	{
+		"date":"2026-02-01",
+		"title":"New preprint: adaptive isogeometric phase-field fracture with THB-splines",
+		"text":"Our new preprint on adaptive isogeometric analysis of high-order phase-field fracture based on THB-splines, with L. Greco and A. Reali, is now on arXiv.",
+		"url":"https://doi.org/10.48550/arXiv.2602.21685",
+		"featured":true
+	}
+	,
+	{
+		"date":"2026-01-12",
+		"title":"Talk at G+Smo Developer Days 2026",
+		"text":"Presented \"Towards High Performant G+Smo: Domain Decomposition and GPU Support\" at the G+Smo Developer Days 2026, hosted by the University of West Bohemia in Pilsen, Czech Republic.",
+		"url":"https://github.com/gismo/gismo/wiki/GiSmo-Developer-days-2026",
+		"featured":false
+	}
+	,
+	{
+		"date":"2025-11-01",
+		"title":"Started postdoctoral position at TU Eindhoven",
+		"text":"Began a postdoctoral research position in the Department of Mechanical Engineering at Technische Universiteit Eindhoven.",
+		"details":"My work focusses on numerical methods for solid and fluid mechanics, using the mathematical concept of Isogeometric Analysis (IGA). In particular, I contribute to the fields of adaptive meshing for IGA, phase-field fracture and data-driven analysis, and I am a main developer of the [Geometry+Simulation Modules (G+Smo)](https://github.com/gismo).",
+		"featured":true
+	}
+	,
+	{
+		"date":"2025-09-17",
+		"title":"Winner of the PhD Olympiad 2025",
+		"text":"Awarded the PhD Olympiad 2025 prize by the European Community on Computational Methods in Applied Sciences (ECCOMAS) Young Investigators Committee, presented at the 8th ECCOMAS Young Investigators Conference in Pescara, Italy.",
+		"url":"https://yic2025.cimne.com/",
+		"featured":false
+	}
+	,
+	{
+		"date":"2025-08-01",
+		"title":"New preprint: isogeometric multi-patch shell analysis using G+Smo",
+		"text":"A new preprint with A. Mantzaflaris and M. Möller on isogeometric multi-patch shell analysis using the Geometry + Simulation Modules (G+Smo) is now available on arXiv.",
+		"url":"https://doi.org/10.48550/arXiv.2508.10648",
+		"featured":true
+	}
+	,
+	{
+		"date":"2024-10-23",
+		"title":"Biezeno Award for the best PhD thesis in Solid Mechanics",
+		"text":"Received the Biezeno Award from the Royal Institute of Engineers (KIVI) and the Engineering Mechanics graduate school for the best PhD thesis in Solid Mechanics in the Netherlands, and delivered the Biezeno Lecture on \"Isogeometric Analysis of Wrinkling\" at the 27th Engineering Mechanics Symposium.",
+		"url":"https://engineeringmechanics.nl/koiter-lecture-biezeno-award/",
+		"featured":true
+	}
+	,
+	{
+		"date":"2024-07-01",
+		"title":"Talk at PDESoft 2024",
+		"text":"Presented \"G+Smo: Geometry + Simulation Modules for Isogeometric Analysis\" at PDESoft 2024 in Cambridge, United Kingdom.",
+		"url":"https://pdesoft.org/",
+		"featured":false
+	}
+]

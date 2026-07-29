@@ -1,0 +1,51 @@
+{{/*
+  Optional collapsible detail region for a data record.
+
+  Call with:
+    (dict "title" <title> "url" <link>
+          "text"  <markdown body, e.g. an abstract>
+          "image" <media/foo.png | https://...>  "imageCaption" <alt text>
+          "label" <toggle label, default "Details">)
+
+  Renders nothing unless the record has `text` or `image`, so both fields stay
+  optional and records without them look exactly as before. Emitted after
+  </div> of .resume-item, i.e. outside the flex row, so it spans full width.
+*/}}
+{{ if or .text .image }}
+  {{ $id := printf "rec-%s" (substr (md5 (printf "%s|%s" .title .label)) 0 10) }}
+  {{/* A record with only a figure shouldn't advertise itself as an abstract. */}}
+  {{ $label := cond (and (not .text) (ne .image nil)) "Figure" (.label | default "Details") }}
+  <div class="record-details">
+    <button class="record-toggle" type="button"
+            data-bs-toggle="collapse" data-bs-target="#{{ $id }}"
+            aria-expanded="false" aria-controls="{{ $id }}">
+      <i class="fas fa-chevron-right record-toggle-icon" aria-hidden="true"></i>
+      <span>{{ $label }}</span>
+    </button>
+    <div class="collapse" id="{{ $id }}">
+      <div class="record-details-body">
+        {{ with .text }}
+          <div class="record-abstract">{{ . | markdownify }}</div>
+        {{ end }}
+        {{ with .image }}
+          {{ $src := . }}
+          {{ if not (hasPrefix $src "http") }}{{ $src = $src | relURL }}{{ end }}
+          {{ $caption := $.imageCaption | default $.title }}
+          <figure class="record-figure">
+            <img class="record-image"
+                 src="{{ $src }}"
+                 alt="{{ $caption }}"
+                 loading="lazy"
+                 tabindex="0"
+                 role="button"
+                 data-record-image="{{ $src }}"
+                 data-record-title="{{ $.title }}"
+                 data-record-caption="{{ $.imageCaption }}"
+                 {{ with $.url }}data-record-url="{{ . }}"{{ end }}>
+            {{ with $.imageCaption }}<figcaption>{{ . }}</figcaption>{{ end }}
+          </figure>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

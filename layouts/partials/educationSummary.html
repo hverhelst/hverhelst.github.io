@@ -1,9 +1,9 @@
-{{ $data := .Scratch.Get "pages" }}
+{{ $data := .pages }}
 <div class="my-auto">
   {{ range $data }}
       <div class="resume-item d-flex flex-column flex-md-row mb-5">
-        <div class="resume-content mr-auto">
-          <h4 class="mb-0" href="{{ .schoollink }}">{{ .school | markdownify }}</h4>
+        <div class="resume-content me-auto">
+          <h4 class="mb-0">{{ if .schoollink }}<a href="{{ .schoollink }}">{{ .school | markdownify }}</a>{{ else }}{{ .school | markdownify }}{{ end }}</h4>
           <div class="subheading mb-0">{{ .degree }} {{ if .notes }}({{ .notes | markdownify }}){{ end }}
           </div>
           <div>
@@ -21,7 +21,7 @@
             {{ end }}
           </div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">
             {{ time.Format "2006" .start }} - 
             {{ if .end }}

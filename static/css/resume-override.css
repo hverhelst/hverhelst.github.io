@@ -1,71 +1,264 @@
- .resume-section{
+/* ---------------------------------------------------------------
+   Site palette and typography overrides.
+   Colours are defined once here as custom properties and consumed
+   throughout; every text/background pair meets WCAG AA (>= 4.5:1).
+   --------------------------------------------------------------- */
 
-  font-family: Open Sans;
- }
+:root {
+  --site-accent: #0076C2;         /* 4.8:1 on white  */
+  --site-accent-hover: #00538A;   /* 8.2:1 on white  */
+  --site-secondary: #6B5940;      /* 6.7:1 on white  */
+  --site-secondary-hover: #4C3F2D;
+  --site-sidebar-bg: #00406E;     /* white text: 10.7:1 */
+  --site-body-text: #495057;      /* 8.2:1 on white  */
+  --site-muted: #5C636A;
+  --site-rule: #dee2e6;
+  --site-page-bg: #ffffff;
+}
 
+[data-bs-theme="dark"] {
+  --site-accent: #6CB6E8;         /* 7.4:1 on #1a1d20 */
+  --site-accent-hover: #A5D3F2;
+  --site-secondary: #C6AE86;      /* 8.1:1 on #1a1d20 */
+  --site-secondary-hover: #E0CFB2;
+  --site-sidebar-bg: #10314A;
+  --site-body-text: #C7CCD1;
+  --site-muted: #A7AEB5;
+  --site-rule: #343a40;
+  --site-page-bg: #1a1d20;
+}
 
+body {
+  background-color: var(--site-page-bg);
+  color: var(--site-body-text);
+}
+
+.resume-section {
+  font-family: 'Open Sans', sans-serif;
+  border-bottom-color: var(--site-rule) !important;
+}
 
 h1, h1 a:link, h1 a:visited,
 h2, h2 a:link, h2 a:visited,
-h3, h3 a:link, h3 a:visited
-{
-  font-family: 'Saira Extra Condensed', serif;
+h3, h3 a:link, h3 a:visited {
+  font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
-  color: #0076C2;
+  color: var(--site-accent);
 }
 
-h4,
-h5,
-h6
-{
-  font-family: 'Saira Extra Condensed', serif;
+h4, h5, h6 {
+  font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
-  color: #8E7757;
+  color: var(--site-secondary);
 }
 
+/* Headings scale with the viewport; the fixed 6rem h1 overflowed phones. */
+h1 {
+  font-size: clamp(3rem, 12vw, 6rem);
+  line-height: 1.05;
+}
 
- .list-social-icons a {
-  color: #0076C2;
- }
+h2 {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+}
 
- .list-social-icons a:hover {
-  color: #40A2E3;
- }
+h4 a:link, h4 a:visited {
+  color: var(--site-secondary);
+}
 
- .list-icons .list-inline-item i:hover {
-  color: #40A2E3;
- }
+h4 a:hover, h4 a:focus {
+  color: var(--site-secondary-hover);
+}
 
- .bg-primary {
-  background-color: #999999 !important;
- }
+.subheading {
+  color: var(--site-muted);
+}
 
- .text-primary {
-  color: #999999 !important;
- }
+.list-social-icons a {
+  color: var(--site-accent);
+}
 
- a {
-  color: #8E7757;
- }
+.list-social-icons a:hover,
+.list-social-icons a:focus,
+.list-icons .list-inline-item i:hover {
+  color: var(--site-accent-hover);
+}
 
- a:hover, a:focus, a:active {
-  color: #8E7757;
- }
+.bg-primary {
+  background-color: var(--site-sidebar-bg) !important;
+}
 
- a.markdown-btn
-{
+.text-primary {
+  color: var(--site-muted) !important;
+}
+
+a {
+  color: var(--site-secondary);
+}
+
+a:hover, a:focus, a:active {
+  color: var(--site-secondary-hover);
+}
+
+/* Bootstrap 5 underlines links by default; restore the theme's look */
+a { text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1100;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--site-page-bg);
+  border-radius: 0.25rem;
+}
+
+a.markdown-btn {
   font-size: inherit;
   font-family: inherit;
   color: #FFFFFF;
-  background-color: #0076C2;
+  background-color: var(--site-accent);
   border-radius: 5pt;
   text-align: center;
-  padding: 5px 1em 5px 1em;
+  padding: 5px 1em;
   text-decoration: none;
   border: none;
   cursor: pointer;
 }
-a.markdown-btn:hover
-{
-  background-color: #40A2E3;
+
+a.markdown-btn:hover {
+  background-color: var(--site-accent-hover);
+  color: #FFFFFF;
+}
+
+/* Theme toggle in the sidebar */
+.theme-toggle {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0.25rem;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover, .theme-toggle:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.section-more {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.section-more a {
+  color: var(--site-accent);
+}
+
+.section-more a:hover, .section-more a:focus {
+  color: var(--site-accent-hover);
+}
+
+.site-colophon {
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--site-muted);
+}
+
+/* --- Collapsible record details (abstract / figures) ---
+   Sits outside .resume-item (a flex row) as a plain block, so it always spans
+   the full width under the entry. An entry followed by a fold gives up its own
+   bottom margin, so the toggle stays visually attached to the entry it belongs
+   to and the gap goes below the fold instead. */
+.resume-item:has(+ .record-details) {
+  margin-bottom: 0 !important;
+}
+
+.record-details {
+  margin-top: 0.25rem;
+  margin-bottom: 2rem;
+}
+
+.record-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Saira Extra Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--site-accent);
+  cursor: pointer;
+}
+
+.record-toggle:hover,
+.record-toggle:focus {
+  color: var(--site-accent-hover);
+  text-decoration: underline;
+}
+
+.record-toggle-icon {
+  font-size: 0.75em;
+  transition: transform 0.2s ease;
+}
+
+.record-toggle[aria-expanded="true"] .record-toggle-icon {
+  transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .record-toggle-icon { transition: none; }
+}
+
+.record-details-body {
+  padding: 0.75rem 0 0.25rem 1.25rem;
+  border-left: 2px solid var(--site-rule);
+  margin-top: 0.5rem;
+}
+
+.record-abstract {
+  font-size: 0.95rem;
+}
+
+.record-abstract p:last-child {
+  margin-bottom: 0;
+}
+
+.record-figure {
+  margin: 1rem 0 0;
+}
+
+.record-image {
+  max-width: 100%;
+  max-height: 320px;
+  height: auto;
+  border-radius: 0.25rem;
+  border: 1px solid var(--site-rule);
+  cursor: zoom-in;
+}
+
+.record-figure figcaption {
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--site-muted);
+}
+
+#recordImageModalImg {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+}
+
+.record-modal-caption {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--site-muted);
 }
