@@ -49,12 +49,20 @@
   {{ block "headfiles" . }}{{ end }}
 </head>
 <body id="page-top">
-  <a class="visually-hidden-focusable skip-link" href="#about">Skip to main content</a>
+  {{/* Targets the <main> landmark below, not #about: that id is emitted only by
+       about.html on the homepage, so a skip link pointing at it is dead on every
+       section page. #about must stay as-is regardless — nav.html and ScrollSpy
+       both resolve against it. */}}
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
   {{ partial "nav.html" . }}
   <div class="container-fluid p-0">
-    {{ block "main" . }}
-      {{ .Content }}
-    {{ end }}
+    {{/* tabindex="-1" makes the landmark programmatically focusable, so activating
+         the skip link moves focus and not just the scroll position. */}}
+    <main id="main-content" tabindex="-1">
+      {{ block "main" . }}
+        {{ .Content }}
+      {{ end }}
+    </main>
     <section class="site-colophon">
       <span>This website runs with <a href="https://gohugo.io/">Hugo</a>, based on the
         <a href="https://github.com/eddiewebb/hugo-resume">hugo-resume</a> template.</span>
