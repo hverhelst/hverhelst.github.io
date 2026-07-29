@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ .Content }}
   <ul>
-    {{ range first 10 .Data.Pages }}
+    {{ range first 10 .Pages }}
         <li>
            <a href="{{.Permalink}}">{{.Title}}</a>
        </li>

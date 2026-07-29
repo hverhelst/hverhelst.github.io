@@ -1,12 +1,14 @@
 html {
-  --scroll-behavior: smooth;
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 body {
-  font-family: 'Open Sans', serif;
+  font-family: 'Open Sans', sans-serif;
   padding-top: 54px;
-  color: #868e96;
 }
 
 @media (min-width: 992px) {
@@ -22,9 +24,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Saira Extra Condensed', serif;
+  font-family: 'Saira Extra Condensed', sans-serif;
   font-weight: 700;
-  color: #343a40;
 }
 
 
@@ -32,28 +33,15 @@ h1, h2{
   text-transform: uppercase;
 }
 
-h1 {
-  font-size: 6rem;
-  line-height: 5.5rem;
-}
-
-h2 {
-  font-size: 3.5rem;
-}
-
 .subheading {
   text-transform: uppercase;
   font-weight: 500;
-  font-family: 'Saira Extra Condensed', serif;
+  font-family: 'Saira Extra Condensed', sans-serif;
   font-size: 1.35rem;
 }
 
 .list-social-icons a {
-  color: #495057;
-}
-
-.list-social-icons a:hover {
-  color: #BD5D38;
+  color: inherit;
 }
 
 .list-social-icons a .fa-lg {
@@ -62,10 +50,6 @@ h2 {
 
 .list-icons {
   font-size: 3rem;
-}
-
-.list-icons .list-inline-item i:hover {
-  color: #BD5D38;
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
@@ -124,9 +108,6 @@ section.resume-section .resume-item .resume-date {
 }
 
 @media (min-width: 768px) {
-  section.resume-section {
-    min-height: 100vh;
-  }
   section.resume-section .resume-item .resume-date {
     min-width: 18rem;
   }
@@ -139,18 +120,3 @@ section.resume-section .resume-item .resume-date {
   }
 }
 
-.bg-primary {
-  background-color: #BD5D38 !important;
-}
-
-.text-primary {
-  color: #BD5D38 !important;
-}
-
-a {
-  color: #BD5D38;
-}
-
-a:hover, a:focus, a:active {
-  color: #824027;
-}

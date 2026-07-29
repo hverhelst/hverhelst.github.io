@@ -1,19 +1,18 @@
-{{ $data := .Scratch.Get "pages" }}
+{{ $data := .pages }}
 
 <div class="my-auto">
     {{ $inviteds := where $data "invited" true }}
-    {{ if gt $inviteds 0}}
+    {{ if gt (len $inviteds) 0}}
     <h3>Invited presentations</h3>
-    {{ range sort $inviteds ".year" "desc" }}
-    {{ .description.title }}
+    {{ range sort $inviteds "start" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .url }}
                 {{ .url }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .name | markdownify }}
@@ -21,7 +20,7 @@
           </h4>
           <div class="subheading mb-0">{{ .title | markdownify }}</div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">
             {{ time.Format "02-01-2006" .start }}
             {{ if .end }}
@@ -30,6 +29,7 @@
           </span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .name "text" .details "image" .image "imageCaption" .imageCaption "url" .url "label" "Details") }}
       {{ end }}
     {{ end }}
 </div>
@@ -47,13 +47,13 @@
   {{ end }}
 
   <div class="resume-item d-flex flex-column flex-md-row mb-3">
-    <div class="resume-content mr-auto">
+    <div class="resume-content me-auto">
       <h4 class="mb-0">
         <a href = "
           {{ if .url }}
             {{ .url }}
           {{ else }}
-            {{.}}
+            #
           {{ end }}"
           >
           {{ .name | markdownify }}
@@ -61,7 +61,7 @@
       </h4>
       <div class="subheading mb-0">{{ .title | markdownify }}</div>
     </div>
-    <div class="resume-date text-md-right">
+    <div class="resume-date text-md-end">
       <span class="text-primary">
         {{ time.Format "02-01-2006" .start }}
         {{ if .end }}
@@ -70,7 +70,7 @@
       </span>
     </div>
   </div>
-
+  {{ partial "recordDetails.html" (dict "title" .name "text" .details "image" .image "imageCaption" .imageCaption "url" .url "label" "Details") }}
 
   {{ end }}
 </div>

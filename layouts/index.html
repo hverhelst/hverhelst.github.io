@@ -1,11 +1,8 @@
 {{ define "main" }}
-   {{ partial "about.html" .}}
-   {{ $site := .Site }}
-   {{ range .Site.Params.sections }}
-      {{ $sectionName := . }}
-      {{ with $site.GetPage "section" . }}
-         {{ .Scratch.Set "sectionId" $sectionName }} 
-         {{ partial "JSONsectionSummary" . }}
+   {{ partial "about.html" . }}
+   {{ range site.Params.sections }}
+      {{ with site.GetPage (printf "/%s" .) }}
+         {{ partial "JSONsectionSummary.html" (dict "page" . "section" .Section) }}
       {{ end }}
    {{ end }}
 {{ end }}

@@ -1,11 +1,11 @@
-{{ $data := .Scratch.Get "pages" }}
+{{ $data := .pages }}
 <div class="my-auto">
     {{ $theses := where $data "entry-type" "eq" "thesis" }}
-    {{ if gt $theses 0}}
+    {{ if gt (len $theses) 0}}
     <h3>Theses</h3>
-    {{ range sort $theses "description.year" "desc" }}
+    {{ range sort $theses "description.date" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .description.url }}
@@ -13,7 +13,7 @@
               {{ else if .description.doi }}
                 https://doi.org/{{ .description.doi }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .description.title | markdownify }}
@@ -26,19 +26,20 @@
           </div>
           <div></div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">{{ .description.author }}</span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .description.title "text" .description.abstract "image" .description.image "imageCaption" .description.imageCaption "url" (or .description.url (cond (ne .description.doi nil) (printf "https://doi.org/%s" .description.doi) "")) "label" "Abstract") }}
       {{ end }}
     {{ end }}
 
     {{ $unpublisheds := where $data "entry-type" "eq" "unpublished" }}
-    {{ if gt $unpublisheds 0}}
+    {{ if gt (len $unpublisheds) 0}}
     <h3>Pre-prints</h3>
     {{ range sort $unpublisheds "description.year" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .description.url }}
@@ -46,7 +47,7 @@
               {{ else if .description.doi }}
                 https://doi.org/{{ .description.doi }}
               {{ else }}
-                {{.}}
+                #
               {{ end }}"
               >
               {{ .description.title | markdownify }}
@@ -61,19 +62,20 @@
           </div>
           <div></div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">{{ .description.author }}</span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .description.title "text" .description.abstract "image" .description.image "imageCaption" .description.imageCaption "url" (or .description.url (cond (ne .description.doi nil) (printf "https://doi.org/%s" .description.doi) "")) "label" "Abstract") }}
       {{ end }}
     {{ end }}
 
     {{ $articles := where $data "entry-type" "eq" "article" }}
-    {{ if gt $articles 0}}
+    {{ if gt (len $articles) 0}}
     <h3>Peer-reviewed journal articles</h3>
     {{ range sort $articles "description.year" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .description.url }}
@@ -81,7 +83,7 @@
               {{ else if .description.doi }}
                 https://doi.org/{{ .description.doi }}
               {{ else }}
-                {{ .Site.GetPage }}
+                #
               {{ end }}"
               >
               {{ .description.title | markdownify }}
@@ -100,19 +102,20 @@
           </div>
           <div></div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">{{ .description.author }}</span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .description.title "text" .description.abstract "image" .description.image "imageCaption" .description.imageCaption "url" (or .description.url (cond (ne .description.doi nil) (printf "https://doi.org/%s" .description.doi) "")) "label" "Abstract") }}
       {{ end }}
     {{ end }}
 
     {{ $incollections := where $data "entry-type" "eq" "incollection" }}
-    {{ if gt $incollections 0}}
+    {{ if gt (len $incollections) 0}}
     <h3>Book chapters</h3>
     {{ range sort $incollections "description.year" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .description.url }}
@@ -120,7 +123,7 @@
               {{ else if .description.doi }}
                 https://doi.org/{{ .description.doi }}
               {{ else }}
-                {{ .Site.GetPage }}
+                #
               {{ end }}"
               >
               {{ .description.title | markdownify }}
@@ -136,19 +139,20 @@
           </div>
           <div></div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">{{ .description.author }}</span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .description.title "text" .description.abstract "image" .description.image "imageCaption" .description.imageCaption "url" (or .description.url (cond (ne .description.doi nil) (printf "https://doi.org/%s" .description.doi) "")) "label" "Abstract") }}
       {{ end }}
     {{ end }}
 
     {{ $proceedings := where $data "entry-type" "eq" "inproceeding" }}
-    {{ if gt $proceedings 0}}
+    {{ if gt (len $proceedings) 0}}
     <h3>Conference proceedings</h3>
     {{ range sort $proceedings "description.year" "desc" }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
-        <div class="resume-content mr-auto">
+        <div class="resume-content me-auto">
           <h4 class="mb-0">
             <a href = "
               {{ if .description.url }}
@@ -156,7 +160,7 @@
               {{ else if .description.doi }}
                 https://doi.org/{{ .description.doi }}
               {{ else }}
-                .
+                #
               {{ end }}"
               >
               {{ .description.title | markdownify }}
@@ -175,10 +179,11 @@
           </div>
           <div></div>
         </div>
-        <div class="resume-date text-md-right">
+        <div class="resume-date text-md-end">
           <span class="text-primary">{{ .description.author }}</span>
         </div>
       </div>
+      {{ partial "recordDetails.html" (dict "title" .description.title "text" .description.abstract "image" .description.image "imageCaption" .description.imageCaption "url" (or .description.url (cond (ne .description.doi nil) (printf "https://doi.org/%s" .description.doi) "")) "label" "Abstract") }}
       {{ end }}
     {{ end }}
 
