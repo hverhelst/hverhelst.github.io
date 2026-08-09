@@ -1,0 +1,53 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://www.hugoverhelst.nl/schemas/experience.schema.json",
+	"title": "Experience",
+	"description": "data/experience.json, rendered by layouts/partials/experienceSummary.html. The partial and the LaTeX CV both dispatch on `type` with no fallback, so an unrecognised value silently drops the entry from both.",
+	"type": "array",
+	"items": { "$ref": "#/$defs/item" },
+	"$defs": {
+		"date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" },
+		"optionalDate": {
+			"anyOf": [
+				{ "const": "" },
+				{ "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" }
+			]
+		},
+		"item": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "role", "location", "start", "featured"],
+			"properties": {
+				"type": { "enum": ["professional", "visit", "voluntary"] },
+				"role": { "type": "string", "minLength": 1 },
+				"location": { "type": "string", "minLength": 1 },
+				"institute": { "type": "string", "minLength": 1 },
+				"department": { "type": "string", "minLength": 1 },
+				"organization": { "type": "string", "minLength": 1 },
+				"visiting": { "type": "string", "minLength": 1, "description": "The host of a research visit." },
+				"duration": { "type": "string", "minLength": 1 },
+				"url": { "type": "string", "pattern": "^https?://" },
+				"start": { "$ref": "#/$defs/date" },
+				"end": {
+					"$ref": "#/$defs/optionalDate",
+					"description": "Omitted or empty while the position is ongoing."
+				},
+				"featured": { "type": "boolean" }
+			},
+			"allOf": [
+				{
+					"if": { "properties": { "type": { "const": "professional" } }, "required": ["type"] },
+					"then": { "required": ["institute", "department"] }
+				},
+				{
+					"if": { "properties": { "type": { "const": "visit" } }, "required": ["type"] },
+					"then": { "required": ["institute", "visiting", "duration"] }
+				},
+				{
+					"if": { "properties": { "type": { "const": "voluntary" } }, "required": ["type"] },
+					"then": { "required": ["organization"] }
+				}
+			]
+		}
+	}
+}

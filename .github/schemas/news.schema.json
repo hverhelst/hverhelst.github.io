@@ -1,0 +1,28 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://www.hugoverhelst.nl/schemas/news.schema.json",
+	"title": "News items",
+	"description": "data/news.json, rendered by layouts/partials/newsSummary.html.",
+	"type": "array",
+	"items": { "$ref": "#/$defs/item" },
+	"$defs": {
+		"date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" },
+		"url": { "type": "string", "pattern": "^https?://" },
+		"image": { "type": "string", "pattern": "^(media/|https?://)" },
+		"item": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["date", "title", "text", "featured"],
+			"properties": {
+				"date": { "$ref": "#/$defs/date" },
+				"title": { "type": "string", "minLength": 1 },
+				"text": { "type": "string", "minLength": 1 },
+				"url": { "$ref": "#/$defs/url" },
+				"details": { "type": "string" },
+				"image": { "$ref": "#/$defs/image" },
+				"imageCaption": { "type": "string" },
+				"featured": { "type": "boolean" }
+			}
+		}
+	}
+}

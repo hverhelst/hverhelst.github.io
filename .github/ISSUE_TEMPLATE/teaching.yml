@@ -1,0 +1,83 @@
+name: Teaching
+description: Add a course you taught or assisted.
+title: "[teaching] "
+labels: ["data-entry", "teaching"]
+body:
+  - type: input
+    id: course
+    attributes:
+      label: Course
+      description: Include the course code.
+      placeholder: Computational Fluid Dynamics (WI4011-17)
+    validations:
+      required: true
+
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      placeholder: Teaching Assistant
+    validations:
+      required: true
+
+  - type: input
+    id: university
+    attributes:
+      label: University
+      placeholder: Technische Universiteit Delft
+    validations:
+      required: true
+
+  - type: input
+    id: degree
+    attributes:
+      label: Programme
+      placeholder: Applied Mathematics
+    validations:
+      required: true
+
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - BSc
+        - MSc
+        - PhD
+    validations:
+      required: true
+
+  - type: input
+    id: start
+    attributes:
+      label: Start date
+      description: YYYY-MM-DD.
+      placeholder: 2020-01-01
+    validations:
+      required: true
+
+  - type: input
+    id: end
+    attributes:
+      label: End date
+      description: YYYY-MM-DD.
+      placeholder: 2021-01-01
+
+  - type: input
+    id: duration
+    attributes:
+      label: Duration
+      placeholder: 1 semester
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: The course in the study guide.
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this course on the homepage

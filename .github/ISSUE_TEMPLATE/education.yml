@@ -1,0 +1,79 @@
+name: Education
+description: Add a degree.
+title: "[education] "
+labels: ["data-entry", "education"]
+body:
+  - type: input
+    id: school
+    attributes:
+      label: School
+      placeholder: Technische Universiteit Delft
+    validations:
+      required: true
+
+  - type: input
+    id: degree
+    attributes:
+      label: Degree
+      placeholder: Doctor of Philosophy
+    validations:
+      required: true
+
+  - type: input
+    id: start
+    attributes:
+      label: Start date
+      description: YYYY-MM-DD.
+      placeholder: 2019-09-01
+    validations:
+      required: true
+
+  - type: input
+    id: end
+    attributes:
+      label: End date
+      description: YYYY-MM-DD.
+      placeholder: 2024-01-18
+    validations:
+      required: true
+
+  - type: input
+    id: major
+    attributes:
+      label: Major
+      placeholder: Maritime Technology
+
+  - type: input
+    id: notes
+    attributes:
+      label: Notes
+      placeholder: Cum Laude, Honours
+
+  - type: input
+    id: schoollink
+    attributes:
+      label: School URL
+      placeholder: https://tudelft.nl
+
+  - type: input
+    id: thesis
+    attributes:
+      label: Thesis title
+
+  - type: input
+    id: thesislink
+    attributes:
+      label: Thesis URL
+
+  - type: input
+    id: supervisors
+    attributes:
+      label: Supervisors
+      placeholder: dr. M. Möller, dr. ir. J.H. Den Besten
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this degree on the homepage

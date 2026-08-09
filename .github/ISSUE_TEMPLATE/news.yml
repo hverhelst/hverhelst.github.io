@@ -1,0 +1,50 @@
+name: News item
+description: Add an item to the news feed.
+title: "[news] "
+labels: ["data-entry", "news"]
+body:
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: YYYY-MM-DD. News is listed newest first.
+      placeholder: 2026-06-01
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: "New paper: adaptive isogeometric analysis of the Cahn–Hilliard equation"
+    validations:
+      required: true
+
+  - type: textarea
+    id: text
+    attributes:
+      label: Text
+      description: One or two sentences. Markdown is supported.
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: https://doi.org/10.1016/j.cma.2026.118855
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Read more
+      description: >-
+        Optional longer text, hidden behind a "Read more" toggle. Markdown is
+        supported.
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this item on the homepage

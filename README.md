@@ -14,7 +14,76 @@ Every section of the site is generated from a JSON file in `data/`: `news`, `edu
 Entries flagged `"featured": true` also appear on the homepage.
 
 To add a section: create `data/<name>.json`, a `<name>Summary.html` partial, a content stub,
-an `i18n/en.json` label, and add the name to `params.sections`.
+an `i18n/en.json` label, a `.github/schemas/<name>.schema.json`, and add the name to
+`params.sections`.
+
+## Schemas
+
+Each data file has a JSON Schema in `.github/schemas/`, checked in CI by
+`.github/workflows/data-checks.yml` and reused by the issue-form pipeline, so a hand-written
+record and a form-built one are held to the same standard:
+
+```sh
+python .github/scripts/validate_data.py
+```
+
+They live outside `data/` on purpose — anything under `data/` is ingested by Hugo as site
+data. `.vscode/settings.json` wires them up for autocomplete and inline errors while editing.
+
+They exist for one failure the build cannot see. Every section partial dispatches on an
+enum-valued field with **no fallback branch** — `entry-type` in publications, `type` in
+experience and awards, `level` in teaching and supervision, `invited` in conferences. Write
+`"inproceedings"` for `"inproceeding"`, or leave out `"invited"`, and the entry silently
+disappears from both the website and the CV while `hugo` and `compile_CV.sh` still exit 0.
+The schemas also pin ISO dates, four-digit years, URL schemes, per-`type` required fields,
+and reject unknown keys; `validate_data.py` additionally rejects duplicate cite keys.
+
+## Adding entries through issues
+
+New records do not have to be hand-edited into `data/`. [Opening an
+issue](../../issues/new/choose) offers a form per section — publication, news item,
+conference contribution, software, award, membership, experience, teaching, supervision,
+education. Submitting one triggers `.github/workflows/add-entry.yml`, which builds the
+record, checks that the site still compiles, and opens a pull request against `master` for
+review. Merging it publishes; closing the issue or the pull request throws it away.
+
+Publications have two forms. One asks for each field, the other takes **BibTeX or a DOI** —
+a bare DOI is resolved to BibTeX through doi.org, LaTeX accents are decoded (`M{\"o}ller` →
+Möller), authors are reformatted to the site's `H. M. Verhelst, M. Möller` style, and the
+cite key is taken from the BibTeX or derived as `Surname` + year with a suffix if it is
+already taken. A figure dropped into the form is committed to `static/media/<cite-key>.png`
+and wired up as the record's `image`.
+
+Notes:
+
+- GitHub does not accept `.bib` as an attachment file type. Paste the BibTeX into the form,
+  or rename the file to `.txt`, drag it in, and paste the resulting link.
+- Only issues opened by the repository owner are acted on.
+- Editing the issue rebuilds the branch and updates the pull request, so mistakes are fixed
+  by editing rather than by opening a new issue.
+- The forms apply labels (`data-entry` and the section name). Those are cosmetic — the
+  workflow identifies the form by matching the submitted headings against
+  `.github/ISSUE_TEMPLATE/*.yml`, so nothing breaks if a label does not exist.
+- Pull requests opened with `GITHUB_TOKEN` do not trigger other workflows, which is why
+  `add-entry.yml` runs `hugo` itself before opening one.
+
+How it fits together, all under `.github/scripts/`:
+
+| File | Role |
+| --- | --- |
+| `add_entry.py` | Entry point: match form, build record, write the data file |
+| `issue_form.py` | Recovers field ids by reading the templates back out of `ISSUE_TEMPLATE/` |
+| `sections.py` | Key order, fixed values and insertion position per section |
+| `bibtex.py` | Dependency-free BibTeX reader and LaTeX-to-Unicode decoding |
+| `json_splice.py` | Inserts the record without reformatting the rest of the file |
+| `validate_data.py` | Checks records against `.github/schemas/`, alone or in a file |
+| `selftest.py` | Runs every form through the pipeline; also a CI workflow |
+
+Form field ids are deliberately the same strings as the JSON keys, so adding a field to a
+section means adding it to the template, to that section's `order` in `sections.py`, and to
+the schema — `sections.py` says where a record goes, the schema says what a valid one looks
+like, and neither restates the other. Run `python .github/scripts/selftest.py` from the
+repository root after changing any of it.
 
 ## Foldable record details
 

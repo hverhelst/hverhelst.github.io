@@ -1,0 +1,173 @@
+name: Publication (fill in the fields)
+description: Add a publication by hand, without BibTeX.
+title: "[publication] "
+labels: ["data-entry", "publications"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only the fields that apply to the chosen section are used; leave the
+        rest empty. If you have the BibTeX or a DOI, the other publication
+        form does all of this for you.
+
+        | Section | Uses |
+        | --- | --- |
+        | `article` | journal, volume, issue, pages, publisher |
+        | `inproceeding` | booktitle, series, editor, volume, pages, publisher |
+        | `incollection` | booktitle, editor, pages, publisher |
+        | `thesis` | school, degree, date |
+        | `unpublished` | eprint |
+
+  - type: dropdown
+    id: entry-type
+    attributes:
+      label: Section
+      options:
+        - article
+        - inproceeding
+        - incollection
+        - thesis
+        - unpublished
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Authors
+      description: Initials before surnames, separated by commas.
+      placeholder: H. M. Verhelst, M. Möller, A. Mantzaflaris
+    validations:
+      required: true
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2026"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: A DOI link where there is one.
+      placeholder: https://doi.org/10.1016/j.cma.2026.118855
+    validations:
+      required: true
+
+  - type: input
+    id: journal
+    attributes:
+      label: Journal
+      description: For `article`.
+
+  - type: input
+    id: booktitle
+    attributes:
+      label: Book or proceedings title
+      description: For `inproceeding` and `incollection`.
+
+  - type: input
+    id: editor
+    attributes:
+      label: Editors
+      description: For `inproceeding` and `incollection`.
+
+  - type: input
+    id: series
+    attributes:
+      label: Series
+      description: For `inproceeding`.
+      placeholder: Lecture Notes in Computational Science and Engineering
+
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher
+
+  - type: input
+    id: volume
+    attributes:
+      label: Volume
+
+  - type: input
+    id: issue
+    attributes:
+      label: Issue
+
+  - type: input
+    id: pages
+    attributes:
+      label: Pages
+      placeholder: 303-368
+
+  - type: input
+    id: school
+    attributes:
+      label: School
+      description: For `thesis`.
+      placeholder: Technische Universiteit Delft
+
+  - type: input
+    id: degree
+    attributes:
+      label: Degree
+      description: For `thesis`.
+      placeholder: Doctor of Philosophy
+
+  - type: input
+    id: date
+    attributes:
+      label: Defence date
+      description: For `thesis`, as YYYY-MM-DD.
+      placeholder: 2023-12-22
+
+  - type: input
+    id: eprint
+    attributes:
+      label: Preprint identifier
+      description: For `unpublished`.
+      placeholder: arXiv:2508.10648
+
+  - type: textarea
+    id: abstract
+    attributes:
+      label: Abstract
+      description: Shown in the foldable region under the record.
+
+  - type: input
+    id: cite-key
+    attributes:
+      label: Cite key
+      description: Leave empty to generate one from the first author and year.
+      placeholder: Verhelst2026
+
+  - type: textarea
+    id: figure
+    attributes:
+      label: Figure
+      description: >-
+        Drag a PNG or JPEG in here. It is committed to `static/media/` under
+        the cite key.
+
+  - type: input
+    id: imageCaption
+    attributes:
+      label: Figure caption
+      description: Also used as the image's alt text.
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this publication on the homepage

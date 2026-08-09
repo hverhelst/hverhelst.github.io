@@ -1,0 +1,36 @@
+name: Award
+description: Add a prize, grant or other award.
+title: "[award] "
+labels: ["data-entry", "awards"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Award
+      placeholder: PhD Olympiad 2025 Winner
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Awarded by
+      description: The awarding body, or the event it was awarded at.
+      placeholder: Engineering Mechanics Graduate School
+    validations:
+      required: true
+
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: "2026"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this award on the homepage
