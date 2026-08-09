@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://www.hugoverhelst.nl/schemas/mydata.schema.json",
+	"title": "Personal details",
+	"description": "data/mydata.json, used for the site header and the letterhead of the LaTeX CV.",
+	"type": "object",
+	"additionalProperties": false,
+	"required": ["name", "citationName", "university", "department", "email", "website"],
+	"properties": {
+		"name": { "type": "string", "minLength": 1 },
+		"citationName": {
+			"type": "string",
+			"minLength": 1,
+			"description": "Matched against publication authors to bold your own name in the CV."
+		},
+		"university": { "type": "string", "minLength": 1 },
+		"department": { "type": "string", "minLength": 1 },
+		"address1": { "type": "string" },
+		"address2": { "type": "string" },
+		"address3": { "type": "string" },
+		"email": { "type": "string", "format": "email", "minLength": 1 },
+		"website": { "type": "string", "pattern": "^https?://" }
+	}
+}

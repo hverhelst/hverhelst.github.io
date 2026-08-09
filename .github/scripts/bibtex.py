@@ -136,7 +136,6 @@ def parse(source):
             continue
 
         opening = match.end() - 1
-        closing = {"{": "}", "(": ")"}[source[opening]]
         depth = 0
         end = None
         for i in range(opening, len(source)):

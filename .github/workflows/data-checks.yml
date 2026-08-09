@@ -1,0 +1,46 @@
+# Validates data/*.json against .github/schemas/, and guards the issue-form
+# machinery, which otherwise only runs when a real issue is filed.
+name: Data checks
+
+on:
+  push:
+    branches: ["master"]
+    paths:
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/schemas/**"
+      - ".github/scripts/**"
+      - ".github/workflows/data-checks.yml"
+      - "data/**"
+  pull_request:
+    paths:
+      - ".github/ISSUE_TEMPLATE/**"
+      - ".github/schemas/**"
+      - ".github/scripts/**"
+      - ".github/workflows/data-checks.yml"
+      - "data/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet pyyaml jsonschema
+
+      # Catches what `hugo` cannot: every section partial dispatches on an
+      # enum-valued field with no fallback, so a typo there drops the entry
+      # from the site and the CV while both still build.
+      - name: Validate data/*.json
+        run: python .github/scripts/validate_data.py
+
+      - name: Run the issue-form self-test
+        run: python .github/scripts/selftest.py
+
+      - name: Check the working tree was left clean
+        run: git diff --exit-code

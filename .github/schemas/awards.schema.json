@@ -1,0 +1,51 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://www.hugoverhelst.nl/schemas/awards.schema.json",
+	"title": "Awards and memberships",
+	"description": "data/awards.json, rendered by layouts/partials/awardsSummary.html. The partial and the LaTeX CV both dispatch on `type` with no fallback, so an unrecognised value silently drops the entry from both.",
+	"type": "array",
+	"items": { "$ref": "#/$defs/item" },
+	"$defs": {
+		"date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" },
+		"optionalDate": {
+			"anyOf": [
+				{ "const": "" },
+				{ "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" }
+			]
+		},
+		"item": {
+			"type": "object",
+			"additionalProperties": false,
+			"required": ["type", "featured"],
+			"properties": {
+				"type": { "enum": ["award", "membership"] },
+				"title": { "type": "string", "minLength": 1 },
+				"location": {
+					"type": "string",
+					"minLength": 1,
+					"description": "The awarding body, or the event it was awarded at."
+				},
+				"year": { "type": "string", "pattern": "^\\d{4}$" },
+				"organization": { "type": "string", "minLength": 1 },
+				"member": { "type": "string", "minLength": 1 },
+				"url": { "type": "string", "pattern": "^https?://" },
+				"start": { "$ref": "#/$defs/date" },
+				"end": {
+					"$ref": "#/$defs/optionalDate",
+					"description": "Empty while the membership is ongoing, but always present."
+				},
+				"featured": { "type": "boolean" }
+			},
+			"allOf": [
+				{
+					"if": { "properties": { "type": { "const": "award" } }, "required": ["type"] },
+					"then": { "required": ["title", "location", "year"] }
+				},
+				{
+					"if": { "properties": { "type": { "const": "membership" } }, "required": ["type"] },
+					"then": { "required": ["organization", "member", "start", "end"] }
+				}
+			]
+		}
+	}
+}

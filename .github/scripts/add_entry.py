@@ -28,6 +28,7 @@ import bibtex  # noqa: E402
 import issue_form  # noqa: E402
 import json_splice  # noqa: E402
 import sections  # noqa: E402
+import validate_data  # noqa: E402
 
 MEDIA_DIR = os.path.join("static", "media")
 USER_AGENT = "hverhelst.github.io data-entry bot"
@@ -63,16 +64,14 @@ def paragraphs(value):
     )
 
 
-def check_date(value, field, exact=True):
-    """Dates are ISO in every data file; the CV parser depends on it."""
-    if not value:
-        return ""
-    value = value.strip()
-    if exact and not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+def check(data_file, record):
+    """Hold the record to the same schema a hand-written one is held to."""
+    found = validate_data.validate_record(data_file, record)
+    if found:
+        problems = "; ".join(problem.split(": ", 1)[-1] for problem in found)
         raise SubmissionError(
-            f"`{field}` must be a full ISO date (YYYY-MM-DD), got {value!r}."
+            f"the entry does not fit {os.path.basename(data_file)}: {problems}"
         )
-    return value
 
 
 def fetch(url, accept=None):
@@ -264,21 +263,6 @@ def build_publication(stem, answers, existing):
         preferred_key = answers.get("cite-key", "").strip()
         fallback_key = display_surname(description.get("author", ""))
 
-    if entry_type not in sections.ENTRY_TYPES:
-        raise SubmissionError(
-            f"unknown entry type {entry_type!r}; expected one of "
-            + ", ".join(sections.ENTRY_TYPES)
-        )
-    if not description.get("title"):
-        raise SubmissionError("the publication has no title.")
-    if not description.get("author"):
-        raise SubmissionError("the publication has no authors.")
-    if entry_type == "thesis":
-        # The Hugo partial formats this with time.Format, which needs a date.
-        check_date(description.get("date", ""), "date")
-        if not description.get("date"):
-            raise SubmissionError("a thesis needs a defence date (YYYY-MM-DD).")
-
     cite_key = unique_cite_key(
         preferred_key,
         (fallback_key or "Entry") + description.get("year", ""),
@@ -299,19 +283,18 @@ def build_publication(stem, answers, existing):
         for key in sections.PUBLICATION["description_order"]
         if description.get(key)
     }
-    return {
+    record = {
         "cite-key": cite_key,
         "entry-type": entry_type,
         "description": ordered,
         "featured": bool(answers.get("featured")),
     }
+    check(sections.PUBLICATION["file"], record)
+    return record
 
 
 # --------------------------------------------------------------------------
 # generic sections
-
-
-DATE_FIELDS = ("date", "start", "end", "graduation")
 
 
 def build_record(stem, answers):
@@ -334,10 +317,9 @@ def build_record(stem, answers):
         if not isinstance(value, str):
             continue
         value = paragraphs(value) if key in multiline else one_line(value)
-        if key in DATE_FIELDS:
-            value = check_date(value, key)
         if value or key in keep_empty:
             record[key] = value
+    check(config["file"], record)
     return record
 
 
@@ -415,16 +397,6 @@ def main():
         index = len(entries)
     else:
         record = build_record(stem, answers)
-        missing = [
-            field["attributes"]["label"]
-            for field in issue_form.fields(template)
-            if field.get("validations", {}).get("required")
-            and field.get("id") in config["order"]
-            and not record.get(field["id"])
-            and field["type"] != "checkboxes"
-        ]
-        if missing:
-            raise SubmissionError("missing required field(s): " + ", ".join(missing))
         summary = config["summary"].format(**{**{k: "" for k in config["order"]}, **record})
         index = placement(entries, record, config)
 
@@ -432,8 +404,14 @@ def main():
         print(json.dumps(record, indent="\t", ensure_ascii=False))
         return 0
 
+    # Never leave behind a data file the site cannot read.
     updated = json_splice.insert(text, record, index)
-    json.loads(updated)  # never leave a data file the site cannot read
+    spliced = json.loads(updated)
+    problems = validate_data.problems(
+        spliced, validate_data.load_schema(config["file"])
+    )
+    if problems:
+        raise SubmissionError("; ".join(problems))
     with open(config["file"], "w", encoding="utf-8") as handle:
         handle.write(updated)
 

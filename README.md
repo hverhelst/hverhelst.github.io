@@ -14,7 +14,29 @@ Every section of the site is generated from a JSON file in `data/`: `news`, `edu
 Entries flagged `"featured": true` also appear on the homepage.
 
 To add a section: create `data/<name>.json`, a `<name>Summary.html` partial, a content stub,
-an `i18n/en.json` label, and add the name to `params.sections`.
+an `i18n/en.json` label, a `.github/schemas/<name>.schema.json`, and add the name to
+`params.sections`.
+
+## Schemas
+
+Each data file has a JSON Schema in `.github/schemas/`, checked in CI by
+`.github/workflows/data-checks.yml` and reused by the issue-form pipeline, so a hand-written
+record and a form-built one are held to the same standard:
+
+```sh
+python .github/scripts/validate_data.py
+```
+
+They live outside `data/` on purpose — anything under `data/` is ingested by Hugo as site
+data. `.vscode/settings.json` wires them up for autocomplete and inline errors while editing.
+
+They exist for one failure the build cannot see. Every section partial dispatches on an
+enum-valued field with **no fallback branch** — `entry-type` in publications, `type` in
+experience and awards, `level` in teaching and supervision, `invited` in conferences. Write
+`"inproceedings"` for `"inproceeding"`, or leave out `"invited"`, and the entry silently
+disappears from both the website and the CV while `hugo` and `compile_CV.sh` still exit 0.
+The schemas also pin ISO dates, four-digit years, URL schemes, per-`type` required fields,
+and reject unknown keys; `validate_data.py` additionally rejects duplicate cite keys.
 
 ## Adding entries through issues
 
@@ -54,11 +76,13 @@ How it fits together, all under `.github/scripts/`:
 | `sections.py` | Key order, fixed values and insertion position per section |
 | `bibtex.py` | Dependency-free BibTeX reader and LaTeX-to-Unicode decoding |
 | `json_splice.py` | Inserts the record without reformatting the rest of the file |
+| `validate_data.py` | Checks records against `.github/schemas/`, alone or in a file |
 | `selftest.py` | Runs every form through the pipeline; also a CI workflow |
 
 Form field ids are deliberately the same strings as the JSON keys, so adding a field to a
-section means adding it to the template and to that section's `order` in `sections.py` —
-there is no third mapping to keep in sync. Run `python .github/scripts/selftest.py` from the
+section means adding it to the template, to that section's `order` in `sections.py`, and to
+the schema — `sections.py` says where a record goes, the schema says what a valid one looks
+like, and neither restates the other. Run `python .github/scripts/selftest.py` from the
 repository root after changing any of it.
 
 ## Foldable record details

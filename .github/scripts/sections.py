@@ -179,10 +179,8 @@ PUBLICATION = {
     "summary": "{title}",
 }
 
-# The five values the Hugo partial and the LaTeX CV know how to render.
-ENTRY_TYPES = ("article", "inproceeding", "incollection", "thesis", "unpublished")
-
-# BibTeX entry type -> the site's entry-type.
+# BibTeX entry type -> the site's entry-type. Which values are legal, and
+# which fields each of them needs, lives in .github/schemas/.
 BIBTEX_ENTRY_TYPES = {
     "article": "article",
     "inproceedings": "inproceeding",

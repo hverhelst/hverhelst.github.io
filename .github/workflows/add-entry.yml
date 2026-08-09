@@ -39,7 +39,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install --quiet pyyaml
+        run: pip install --quiet pyyaml jsonschema
 
       - name: Build the entry
         id: entry

@@ -1,0 +1,15 @@
+{
+	"//": "Autocomplete and inline validation while hand-editing data/*.json. The same schemas are enforced in CI by .github/workflows/data-checks.yml.",
+	"json.schemas": [
+		{ "fileMatch": ["/data/awards.json"], "url": "./.github/schemas/awards.schema.json" },
+		{ "fileMatch": ["/data/conferences.json"], "url": "./.github/schemas/conferences.schema.json" },
+		{ "fileMatch": ["/data/education.json"], "url": "./.github/schemas/education.schema.json" },
+		{ "fileMatch": ["/data/experience.json"], "url": "./.github/schemas/experience.schema.json" },
+		{ "fileMatch": ["/data/mydata.json"], "url": "./.github/schemas/mydata.schema.json" },
+		{ "fileMatch": ["/data/news.json"], "url": "./.github/schemas/news.schema.json" },
+		{ "fileMatch": ["/data/publications.json"], "url": "./.github/schemas/publications.schema.json" },
+		{ "fileMatch": ["/data/software.json"], "url": "./.github/schemas/software.schema.json" },
+		{ "fileMatch": ["/data/supervision.json"], "url": "./.github/schemas/supervision.schema.json" },
+		{ "fileMatch": ["/data/teaching.json"], "url": "./.github/schemas/teaching.schema.json" }
+	]
+}

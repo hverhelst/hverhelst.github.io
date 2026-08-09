@@ -154,6 +154,16 @@ EXPECTED = {
     "education": {"major": "Maritime Technology"},
 }
 
+# Submissions that must be refused rather than written to data/, keyed by
+# form. Each is a valid case with one thing wrong that the schemas catch and
+# `hugo` does not.
+REJECTED = {
+    "news": ({"date": "1 August 2026"}, "a date that is not ISO"),
+    "conference": ({"start": ""}, "a missing required field"),
+    "supervision": ({"level": "Msc"}, "a level outside the enum"),
+    "publication": ({"url": "doi.org/10.0000/x"}, "a URL with no scheme"),
+}
+
 failures = []
 
 
@@ -241,6 +251,26 @@ def run_case(stem, template, answers, workdir):
     return entry
 
 
+def run_rejection(stem, template, answers, description, workdir):
+    """A broken submission must be refused, and must not touch the data file."""
+    body_file = os.path.join(workdir, "reject.md")
+    with open(body_file, "w", encoding="utf-8") as handle:
+        handle.write(render(template, answers))
+
+    config = sections.config(stem)
+    before = open(config["file"], encoding="utf-8").read()
+    result = subprocess.run(
+        [sys.executable, SCRIPT, "--body-file", body_file, "--report", os.devnull],
+        capture_output=True,
+        text=True,
+    )
+    check(result.returncode != 0, f"{stem}: {description} was accepted")
+    check(
+        open(config["file"], encoding="utf-8").read() == before,
+        f"{stem}: {description} was rejected but the data file changed",
+    )
+
+
 def main():
     if not os.path.isdir(".github/ISSUE_TEMPLATE"):
         sys.exit("run from the repository root")
@@ -260,6 +290,10 @@ def main():
             if stem not in templates:
                 continue
             entries[stem] = run_case(stem, templates[stem], CASES[stem], workdir)
+        for stem, (override, description) in sorted(REJECTED.items()):
+            run_rejection(
+                stem, templates[stem], {**CASES[stem], **override}, description, workdir
+            )
     finally:
         shutil.rmtree("data")
         shutil.copytree(backup, "data")
@@ -317,7 +351,10 @@ def main():
         for failure in failures:
             print("FAIL " + failure)
         sys.exit(1)
-    print(f"ok — {len(CASES)} issue forms round-trip into data/")
+    print(
+        f"ok — {len(CASES)} issue forms round-trip into data/, "
+        f"{len(REJECTED)} broken submissions refused"
+    )
 
 
 if __name__ == "__main__":
