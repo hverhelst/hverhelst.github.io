@@ -1,0 +1,56 @@
+name: Software
+description: Add a software package or module.
+title: "[software] "
+labels: ["data-entry", "software"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: Geometry + Simulation Modules (G+Smo) - gsKLShell
+    validations:
+      required: true
+
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      placeholder: Main developer
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A couple of sentences on what the package does.
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: https://github.com/gismo/gsKLShell
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      description: Without the `https://doi.org/` prefix.
+      placeholder: 10.5281/zenodo.15167503
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Optional text behind a "Details" toggle. Markdown is supported.
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this package on the homepage

@@ -1,0 +1,71 @@
+name: Conference contribution
+description: Add a talk, poster or other conference appearance.
+title: "[conference] "
+labels: ["data-entry", "conferences"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Conference
+      placeholder: 17th World Congress on Computational Mechanics
+    validations:
+      required: true
+
+  - type: input
+    id: title
+    attributes:
+      label: Contribution title
+      description: >-
+        Use `(Organizational support)` or a similar note where there was no
+        talk.
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: Vancouver, Canada
+    validations:
+      required: true
+
+  - type: input
+    id: start
+    attributes:
+      label: Start date
+      description: YYYY-MM-DD.
+      placeholder: 2026-07-19
+    validations:
+      required: true
+
+  - type: input
+    id: end
+    attributes:
+      label: End date
+      description: YYYY-MM-DD. Leave empty for a single-day event.
+      placeholder: 2026-07-24
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Optional text behind a "Details" toggle. Markdown is supported.
+
+  - type: checkboxes
+    id: invited
+    attributes:
+      label: Invited
+      options:
+        - label: This was an invited contribution
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this contribution on the homepage

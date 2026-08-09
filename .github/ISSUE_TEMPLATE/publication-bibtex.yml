@@ -1,0 +1,81 @@
+name: Publication (from BibTeX or DOI)
+description: Add a publication by pasting its BibTeX entry or its DOI.
+title: "[publication] "
+labels: ["data-entry", "publications"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Paste a BibTeX entry, or just a DOI — the DOI is resolved to BibTeX
+        automatically. Everything the site shows is derived from it.
+
+        GitHub does not accept `.bib` files as attachments. To use a file,
+        either open it and paste the contents below, or rename it to `.txt`,
+        drag it in, and paste the link it turns into.
+
+  - type: textarea
+    id: bibtex
+    attributes:
+      label: BibTeX, DOI or .bib link
+      description: >-
+        A full `@article{...}` entry, a bare DOI such as
+        `10.1016/j.cma.2026.118855`, or a link to a raw `.bib`/`.txt` file.
+      placeholder: |
+        @article{Verhelst2024,
+          author  = {Verhelst, H. M. and M{\"o}ller, M.},
+          title   = {A paper title},
+          journal = {Computer Methods in Applied Mechanics and Engineering},
+          volume  = {420},
+          pages   = {116742},
+          year    = {2024},
+          doi     = {10.1016/j.cma.2024.116742}
+        }
+    validations:
+      required: true
+
+  - type: dropdown
+    id: entry-type
+    attributes:
+      label: Section
+      description: Which heading the publication is listed under.
+      options:
+        - auto-detect from the BibTeX entry type
+        - article
+        - inproceeding
+        - incollection
+        - thesis
+        - unpublished
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: cite-key
+    attributes:
+      label: Cite key
+      description: >-
+        Leave empty to reuse the BibTeX key, or to generate one such as
+        `Verhelst2026`. A suffix is appended if the key is already taken.
+      placeholder: Verhelst2026
+
+  - type: textarea
+    id: figure
+    attributes:
+      label: Figure
+      description: >-
+        Drag a PNG or JPEG in here. It is committed to `static/media/` under
+        the cite key and shown in the foldable abstract.
+
+  - type: input
+    id: imageCaption
+    attributes:
+      label: Figure caption
+      description: Also used as the image's alt text.
+      placeholder: Simulated wrinkling field of a stretched thin membrane.
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this publication on the homepage

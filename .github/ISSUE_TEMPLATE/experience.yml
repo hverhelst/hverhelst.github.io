@@ -1,0 +1,103 @@
+name: Experience
+description: Add a position, a research visit or a voluntary role.
+title: "[experience] "
+labels: ["data-entry", "experience"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        | Kind | Uses |
+        | --- | --- |
+        | `professional` | institute, department, location |
+        | `visit` | institute, location, host, duration |
+        | `voluntary` | organisation, location, URL |
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Kind
+      options:
+        - professional
+        - visit
+        - voluntary
+    validations:
+      required: true
+
+  - type: input
+    id: role
+    attributes:
+      label: Role
+      placeholder: Post-Doctoral Researcher
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      placeholder: Eindhoven, The Netherlands
+    validations:
+      required: true
+
+  - type: input
+    id: start
+    attributes:
+      label: Start date
+      description: YYYY-MM-DD.
+      placeholder: 2025-11-01
+    validations:
+      required: true
+
+  - type: input
+    id: end
+    attributes:
+      label: End date
+      description: YYYY-MM-DD. Leave empty if it is ongoing.
+
+  - type: input
+    id: institute
+    attributes:
+      label: Institute
+      description: For `professional` and `visit`.
+      placeholder: Technische Universiteit Eindhoven
+
+  - type: input
+    id: department
+    attributes:
+      label: Department
+      description: For `professional`.
+      placeholder: Department of Mechanical Engineering
+
+  - type: input
+    id: visiting
+    attributes:
+      label: Host
+      description: For `visit`.
+      placeholder: dr. A. Mantzaflaris
+
+  - type: input
+    id: duration
+    attributes:
+      label: Duration
+      description: For `visit`.
+      placeholder: 9 weeks
+
+  - type: input
+    id: organization
+    attributes:
+      label: Organisation
+      description: For `voluntary`.
+      placeholder: Open Science Community Delft
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      description: For `voluntary`.
+
+  - type: checkboxes
+    id: featured
+    attributes:
+      label: Featured
+      options:
+        - label: Show this entry on the homepage
