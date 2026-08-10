@@ -13,6 +13,15 @@ Every section of the site is generated from a JSON file in `data/`: `news`, `edu
 `layouts/partials/<section>Summary.html` renderer and a stub `content/<section>/_index.md`.
 Entries flagged `"featured": true` also appear on the homepage.
 
+Each homepage section shows at most `params.featuredLimit` of them (default 5), newest
+first, and links to the full section page for the rest; set it to 0 for no limit. The cap is
+applied per category for publications — five articles *and* the theses *and* the pre-prints,
+so a good year of papers cannot push the rest off the page. Sections are capped as a whole.
+`layouts/partials/featuredNewest.html` does the ranking: each data file dates its records
+under a different key, so it reads the first of `date`, `start`, `graduation`, `year` that a
+record carries, treats a bare year as the end of that year, and leaves undated records
+(software) in the order the data file has them. Section pages are never capped.
+
 To add a section: create `data/<name>.json`, a `<name>Summary.html` partial, a content stub,
 an `i18n/en.json` label, a `.github/schemas/<name>.schema.json`, and add the name to
 `params.sections`.

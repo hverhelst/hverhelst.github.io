@@ -1,7 +1,9 @@
 {{ $data := .pages }}
 <div class="my-auto">
-    <h3>Awards & Honours</h3>
     {{ $awards := where $data "type" "eq" "award" }}
+    {{ if gt (len $awards) 0 }}
+    <h3>Awards & Honours</h3>
+    {{ end }}
     {{ range $awards }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
         <div class="resume-content me-auto">
@@ -15,8 +17,10 @@
       </div>
       {{ end }}
 
-    <h3>Memberships</h3>
     {{ $memberships := where $data "type" "eq" "membership" }}
+    {{ if gt (len $memberships) 0 }}
+    <h3>Memberships</h3>
+    {{ end }}
     {{ range $memberships }}
       <div class="resume-item d-flex flex-column flex-md-row mb-3">
         <div class="resume-content me-auto">

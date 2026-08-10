@@ -1,0 +1,56 @@
+{{/*
+  Returns the newest `limit` records of `items`, or all of them when `limit`
+  is 0 or there are no more than that many.
+
+  Each data file dates its records under a different key, and publications
+  keep theirs one level down in `description`, so the date is looked up under
+  the first key a record actually carries. A bare year sorts as the end of
+  that year, which puts a 2021 award after a membership that started in
+  January 2021 rather than before it. Records with no date at all — software —
+  keep the order they have in the data file.
+
+  Call with: (dict "items" $records "limit" 5)
+*/}}
+{{ $items := .items }}
+{{ $limit := .limit }}
+{{ $result := $items }}
+
+{{ if and (gt $limit 0) (gt (len $items) $limit) }}
+  {{ $ranked := slice }}
+  {{ $dated := false }}
+  {{ range $item := $items }}
+    {{ $fields := $item }}
+    {{ $nested := index $item "description" }}
+    {{ if reflect.IsMap $nested }}
+      {{ $fields = $nested }}
+    {{ end }}
+
+    {{ $key := "" }}
+    {{ range $name := (slice "date" "start" "graduation" "year") }}
+      {{ if eq $key "" }}
+        {{ with index $fields $name }}
+          {{ $key = printf "%v" . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if eq (len $key) 4 }}
+      {{ $key = printf "%s-12-31" $key }}
+    {{ end }}
+    {{ if ne $key "" }}
+      {{ $dated = true }}
+    {{ end }}
+
+    {{ $ranked = $ranked | append (dict "key" $key "item" $item) }}
+  {{ end }}
+
+  {{ if $dated }}
+    {{ $result = slice }}
+    {{ range first $limit (sort $ranked "key" "desc") }}
+      {{ $result = $result | append .item }}
+    {{ end }}
+  {{ else }}
+    {{ $result = first $limit $items }}
+  {{ end }}
+{{ end }}
+
+{{ return $result }}

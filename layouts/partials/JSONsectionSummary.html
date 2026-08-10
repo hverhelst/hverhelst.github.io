@@ -1,15 +1,49 @@
 {{ $secID := .section }}
 {{ $page := .page }}
 {{ $data := index hugo.Data $secID }}
+
+{{/* Sections whose homepage cap applies per category rather than to the
+     section as a whole: five publications of every kind, not five in total. */}}
+{{ $groupedBy := dict "publications" "entry-type" }}
+
+{{/* Not `default`, which would read a configured 0 — no limit — as unset. */}}
+{{ $limit := 5 }}
+{{ if isset site.Params "featuredlimit" }}
+  {{ $limit = int site.Params.featuredLimit }}
+{{ end }}
+{{ $featured := where $data "featured" true }}
+{{ $shown := $featured }}
+{{ with index $groupedBy $secID }}
+  {{ $field := . }}
+  {{ $groups := slice }}
+  {{ range $featured }}
+    {{ $value := index . $field }}
+    {{ if not (in $groups $value) }}
+      {{ $groups = $groups | append $value }}
+    {{ end }}
+  {{ end }}
+  {{ $shown = slice }}
+  {{ range $value := $groups }}
+    {{ $group := where $featured $field "eq" $value }}
+    {{/* Appended one record at a time: `append` only flattens a slice whose
+         element type matches the destination's, and the helper hands back a
+         differently typed slice depending on whether it had to truncate. */}}
+    {{ range partial "featuredNewest.html" (dict "items" $group "limit" $limit) }}
+      {{ $shown = $shown | append . }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $shown = partial "featuredNewest.html" (dict "items" $featured "limit" $limit) }}
+{{ end }}
+
 <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="{{ $secID }}">
   <div class="my-auto">
     <div class=" pb-2 pt-3">
       <h2><a href="{{ $page.Permalink }}">{{ i18n $secID }}</a></h2>
     </div>
-    {{ $featured := where $data "featured" true }}
-    {{ partial (printf "%sSummary.html" $secID) (dict "pages" $featured) }}
+    {{ partial (printf "%sSummary.html" $secID) (dict "pages" $shown) }}
     </div>
-  {{ if gt (len $data) (len $featured) }}
+  {{ if gt (len $data) (len $shown) }}
     <div class="my-auto">
       {{/* The section labels are a mix of plurals ("Publications"), mass nouns
            ("Software", "Education") and phrases ("Awards, Honours and

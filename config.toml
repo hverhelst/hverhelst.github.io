@@ -17,6 +17,15 @@ CVlink = "doc/CV.pdf"
 
 sections = ["news","education","experience","awards","publications","conferences","software","teaching","supervision"]
 
+# How many featured records each homepage section shows before it falls back to
+# its "See all ..." link, newest first. Publications count this per category, so
+# a busy year of articles cannot crowd out the theses. 0 means no limit.
+featuredLimit = 5
+
+# How many featured records each homepage section shows before it falls back to
+# its "See all ..." link, newest first. Publications count this per category, so
+# a busy year of articles cannot crowd out the theses. 0 means no limit.
+
 [[params.handles]]
 name = "LinkedIn"
 link = "https://www.linkedin.com/in/hugo-verhelst/"
