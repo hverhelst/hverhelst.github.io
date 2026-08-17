@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Section registry",
+  "description": "The ordered list of sections the site renders. Read by Hugo (hugo.Data.sections) and by the LaTeX CV, so the website and the PDF cannot drift apart.",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": ["id"],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$",
+        "description": "Anchor id on the homepage, and the default for data, style and the i18n label key."
+      },
+      "data": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$",
+        "description": "Data file behind the section, without the .json suffix. Defaults to id."
+      },
+      "style": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$",
+        "description": "Renderer to use: partials/sections/<style>.html, falling back to the generic renderer. Defaults to id."
+      },
+      "label": {
+        "type": "string",
+        "description": "Heading text. Overrides the i18n lookup, so a new section needs no translation entry."
+      },
+      "cvLabel": {
+        "type": "string",
+        "description": "Heading used in the generated CV, where the wording is often longer than on the site (\"Conference and seminar presentations\" against \"Conferences\"). Defaults to label."
+      },
+      "enable": { "type": "boolean", "default": true },
+      "featuredOnly": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show only records with featured: true on the homepage."
+      },
+      "homepageLimit": {
+        "type": "integer",
+        "minimum": 0,
+        "default": 0,
+        "description": "Cap the homepage records. 0 means no cap."
+      },
+      "weight": {
+        "type": "integer",
+        "description": "Ordering in the nav and on the homepage. Defaults to declaration order."
+      },
+      "inCV": {
+        "type": "boolean",
+        "default": true,
+        "description": "Include this section in the generated CV."
+      },
+      "titleField": { "type": "string" },
+      "subtitleField": { "type": "string" },
+      "bodyField": { "type": "string" },
+      "dateField": { "type": "string" },
+      "dateFormat": { "type": "string" },
+      "linkField": { "type": "string" },
+      "detailsField": { "type": "string" },
+      "groupField": {
+        "type": "string",
+        "description": "Field to group records by, rendering a subheading per distinct value."
+      },
+      "sortField": { "type": "string" },
+      "sortReverse": { "type": "boolean", "default": true }
+    }
+  }
+}

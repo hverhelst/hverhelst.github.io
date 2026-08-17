@@ -1,8 +1,0 @@
-{{ define "main" }}
-   {{ partial "about.html" . }}
-   {{ range site.Params.sections }}
-      {{ with site.GetPage (printf "/%s" .) }}
-         {{ partial "JSONsectionSummary.html" (dict "page" . "section" .Section) }}
-      {{ end }}
-   {{ end }}
-{{ end }}

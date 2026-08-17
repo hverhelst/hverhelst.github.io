@@ -55,8 +55,12 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      # The CV writer ships with the theme, alongside the layouts and the
+      # data-entry scripts. It builds from data/*.json in this repository —
+      # including data/sections.json, the same file the site renders from, so
+      # the PDF cannot quietly omit a section the website shows.
       - name: Compile CV
-        run: bash compile_CV.sh
+        run: bash themes/dbaw/compile_CV.sh
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

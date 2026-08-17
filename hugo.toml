@@ -1,3 +1,4 @@
+theme = "dbaw"
 baseURL = "https://hugoverhelst.nl/"
 locale = "en"
 title = "Hugo Verhelst"
@@ -15,7 +16,6 @@ showQr = false
 showSocializations = true
 CVlink = "doc/CV.pdf"
 
-sections = ["news","education","experience","awards","publications","conferences","software","teaching","supervision"]
 
 [[params.handles]]
 name = "LinkedIn"

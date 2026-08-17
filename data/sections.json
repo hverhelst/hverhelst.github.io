@@ -1,0 +1,38 @@
+[
+  {
+    "id": "news",
+    "inCV": false
+  },
+  {
+    "id": "education",
+    "cvLabel": "Education"
+  },
+  {
+    "id": "experience",
+    "cvLabel": "Experience"
+  },
+  {
+    "id": "awards",
+    "cvLabel": "Awards & Memberships"
+  },
+  {
+    "id": "publications",
+    "cvLabel": "Publications"
+  },
+  {
+    "id": "conferences",
+    "cvLabel": "Conference and seminar presentations"
+  },
+  {
+    "id": "software",
+    "cvLabel": "Software contributions"
+  },
+  {
+    "id": "teaching",
+    "cvLabel": "Teaching experience"
+  },
+  {
+    "id": "supervision",
+    "cvLabel": "Supervision & Committee work"
+  }
+]

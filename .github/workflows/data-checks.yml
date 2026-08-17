@@ -1,23 +1,24 @@
-# Validates data/*.json against .github/schemas/, and guards the issue-form
-# machinery, which otherwise only runs when a real issue is filed.
+# Validates data/*.json against the schemas, guards the issue-form machinery
+# (which otherwise only runs when a real issue is filed), and reports when the
+# vendored issue forms have fallen behind the theme.
 name: Data checks
 
 on:
   push:
-    branches: ["master"]
+    branches: ["master", "main"]
     paths:
       - ".github/ISSUE_TEMPLATE/**"
       - ".github/schemas/**"
-      - ".github/scripts/**"
       - ".github/workflows/data-checks.yml"
       - "data/**"
+      - "themes/**"
   pull_request:
     paths:
       - ".github/ISSUE_TEMPLATE/**"
       - ".github/schemas/**"
-      - ".github/scripts/**"
       - ".github/workflows/data-checks.yml"
       - "data/**"
+      - "themes/**"
   workflow_dispatch:
 
 permissions:
@@ -26,21 +27,32 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    env:
+      THEME: themes/dbaw
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
       - run: pip install --quiet pyyaml jsonschema
 
-      # Catches what `hugo` cannot: every section partial dispatches on an
-      # enum-valued field with no fallback, so a typo there drops the entry
-      # from the site and the CV while both still build.
+      # Catches what `hugo` cannot: the section presets dispatch on an
+      # enum-valued field, so a typo there drops the entry from the site and
+      # the CV while both still build.
       - name: Validate data/*.json
-        run: python .github/scripts/validate_data.py
+        run: python "$THEME/scripts/validate_data.py"
 
       - name: Run the issue-form self-test
-        run: python .github/scripts/selftest.py
+        run: python "$THEME/scripts/selftest.py"
+
+      # Issue forms have to live in this repository — GitHub will not read them
+      # from the theme — so they are copied, and copies drift. This turns that
+      # drift into a failure with a one-command fix rather than a form that
+      # quietly stops matching its schema.
+      - name: Check the issue forms match the theme
+        run: python "$THEME/scripts/enable_issue_forms.py" --check
 
       - name: Check the working tree was left clean
         run: git diff --exit-code
