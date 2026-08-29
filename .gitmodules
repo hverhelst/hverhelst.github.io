@@ -1,4 +1,4 @@
 [submodule "themes/dbaw"]
 	path = themes/dbaw
 	url = https://github.com/hverhelst/data-based-academic-website
-	branch = claude/website-template-extraction-qlwtba
+	branch = main
