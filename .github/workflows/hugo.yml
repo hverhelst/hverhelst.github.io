@@ -65,6 +65,13 @@ jobs:
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
+          # Supplied here rather than committed to hugo.toml. The key is not a
+          # secret in any real sense — it has to be in the deployed HTML for the
+          # form to post at all — but keeping it out of the repository means it
+          # never enters git history, so rotating it actually retires it.
+          # Pull requests from forks get no secrets: those builds simply render
+          # no form, which is harmless for a build check.
+          HUGO_PARAMS_CONTACT_KEY: ${{ secrets.WEB3FORMS_KEY }}
         run: hugo --minify
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

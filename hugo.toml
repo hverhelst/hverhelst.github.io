@@ -41,11 +41,20 @@ name = "BlueSky"
 link = "https://bsky.app/profile/hugoverhelst.nl"
 icon = "bluesky"
 
-# Contact form instead of a published address. The key identifies where a
-# message goes, not who receives it, so it is safe in a public repository.
-# TODO: paste the access key from https://web3forms.com before merging —
-# until it is set, the contact page shows a "not configured" notice and the
-# site has no contact route at all.
+# Contact form instead of a published address.
+#
+# The key is deliberately empty here: it is injected at build time from the
+# WEB3FORMS_KEY repository secret, via HUGO_PARAMS_CONTACT_KEY in
+# .github/workflows/hugo.yml, so it never enters this repository's history.
+#
+# It is not a secret in the usual sense — the browser has to send it, so it is
+# in the deployed HTML and visible in View Source either way. Keeping it out of
+# git means rotating it actually retires the old one.
+#
+# TODO before merging: create the key at https://web3forms.com and add it as the
+# WEB3FORMS_KEY repository secret. Until then the site has no contact route.
+#
+# To preview locally:  HUGO_PARAMS_CONTACT_KEY=your-key hugo server
 [params.contact]
 provider = "web3forms"
 key = ""
