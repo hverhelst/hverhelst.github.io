@@ -7,7 +7,6 @@ disableKinds = ["taxonomy", "term"]
 
 [params]
 address = "Eindhoven, The Netherlands"
-email = "h.m.verhelst@tue.nl"
 firstName = "Hugo"
 lastName = "Verhelst"
 phone = ""
@@ -41,6 +40,20 @@ icon = "google-scholar"
 name = "BlueSky"
 link = "https://bsky.app/profile/hugoverhelst.nl"
 icon = "bluesky"
+
+# Contact form instead of a published address. The key identifies where a
+# message goes, not who receives it, so it is safe in a public repository.
+# TODO: paste the access key from https://web3forms.com before merging —
+# until it is set, the contact page shows a "not configured" notice and the
+# site has no contact route at all.
+[params.contact]
+provider = "web3forms"
+key = ""
+subject = "Message from hugoverhelst.nl"
+
+[[params.extraPages]]
+label = "Contact"
+url = "/contact/"
 
 [params.meta]
 description = "Hugo Verhelst's personal website"
