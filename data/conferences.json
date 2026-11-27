@@ -420,18 +420,6 @@
 		"featured":true,
 		"invited":false
 	}
-  ,
-  {
-		"name": "WCCM-ECCOMAS 2026",
-		"location": "München, Germany",
-		"title": "Towards Uncertainty Quantification in Phase-field Fracture -- Using Gradient-Preserving Operator Inference",
-		"start": "2026-07-19",
-		"end": "2026-07-24",
-		"url": "https://wccm-eccomas2026.org/",
-		"details": "17th World Congress on Computational Mechancics (WCCM) 10th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS)",
-		"featured": true,
-		"invited": false
-	}
 	,
 	{
 		"name": "The 14th International Conference on Isogeometric Analysis",
@@ -440,7 +428,7 @@
 		"start": "2026-10-11",
 		"end": "2026-10-14",
 		"url": "https://iga2026.usacm.org/",
-    "featured": true,
+    	"featured": true,
 		"invited": false
   }
 
