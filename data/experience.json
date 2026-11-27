@@ -1,11 +1,22 @@
 [
 	{
 		"type":"professional",
+		"role":"Assistant Professor in Dynamics and Structures",
+		"institute": "Nederlandse Defensie Academie",
+		"location":"Eindhoven, The Netherlands",
+		"department":"Faculteit Militaire Wetenschappen",
+		"start":"2026-09-01",
+		"featured":true
+	}
+	,
+	{
+		"type":"professional",
 		"role":"Post-Doctoral Researcher",
 		"institute": "Technische Universiteit Eindhoven",
 		"location":"Eindhoven, The Netherlands",
 		"department":"Department of Mechanical Engineering",
 		"start":"2025-11-01",
+		"end":"2026-08-31",
 		"featured":true
 	}
 	,
