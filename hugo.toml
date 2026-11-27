@@ -59,6 +59,10 @@ icon = "bluesky"
 provider = "web3forms"
 key = ""
 subject = "Message from hugoverhelst.nl"
+# Rendered immediately above the form, so it appears only when the form
+# does. Prose in the page body would promise a form that is not there
+# whenever the key is unset.
+note = "The quickest way to reach me. Messages go straight to my inbox, by way of Web3Forms, which handles the delivery."
 
 [[params.extraPages]]
 label = "Contact"
