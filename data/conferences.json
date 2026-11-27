@@ -428,7 +428,7 @@
 		"start": "2026-10-11",
 		"end": "2026-10-14",
 		"url": "https://iga2026.usacm.org/",
-		"featured": false,
+		"featured": true,
 		"invited": false
 	}
 ]
