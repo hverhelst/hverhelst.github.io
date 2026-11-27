@@ -54,7 +54,7 @@ jobs:
           submodules: recursive
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       # The CV writer ships with the theme, alongside the layouts and the
       # data-entry scripts. It builds from data/*.json in this repository —
       # including data/sections.json, the same file the site renders from, so
