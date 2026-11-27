@@ -429,7 +429,7 @@
 		"end": "2026-07-24",
 		"url": "https://wccm-eccomas2026.org/",
 		"details": "17th World Congress on Computational Mechancics (WCCM) 10th European Congress on Computational Methods in Applied Sciences and Engineering (ECCOMAS)",
-		"featured": false,
+		"featured": true,
 		"invited": false
 	}
 ]
