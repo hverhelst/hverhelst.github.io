@@ -1,5 +1,6 @@
 # Turns a submitted "data entry" issue form into a pull request against the
-# data/*.json files. See .github/scripts/add_entry.py for the conversion.
+# data/*.json files. The conversion lives in the theme, at
+# themes/dbaw/scripts/add_entry.py — this file only wires it up.
 name: Add data entry from issue
 
 on:
@@ -26,12 +27,15 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.164.0
+      THEME: themes/dbaw
       BRANCH: data-entry/issue-${{ github.event.issue.number }}
       ISSUE: ${{ github.event.issue.number }}
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -45,7 +49,7 @@ jobs:
         id: entry
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-        run: python .github/scripts/add_entry.py --issue "$ISSUE"
+        run: python "$THEME/scripts/add_entry.py" --issue "$ISSUE"
 
       - name: Install Hugo CLI
         if: steps.entry.outputs.status == 'added'
@@ -69,6 +73,8 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH"
+          # Explicit paths, never `git add -A`: the theme submodule sits in the
+          # same working tree and must not be swept into a data commit.
           git add data static/media
           git commit -m "Add ${KIND}: ${SUMMARY}" -m "From #${ISSUE}."
           # The branch is rebuilt from scratch every time the issue is edited.

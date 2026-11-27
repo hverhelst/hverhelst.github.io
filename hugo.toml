@@ -1,0 +1,77 @@
+theme = "dbaw"
+baseURL = "https://hugoverhelst.nl/"
+locale = "en"
+title = "Hugo Verhelst"
+dateFormat = "January 2, 2006"
+disableKinds = ["taxonomy", "term"]
+
+[params]
+address = "Eindhoven, The Netherlands"
+firstName = "Hugo"
+lastName = "Verhelst"
+phone = ""
+profileImage = "img/pasfotoTU.jpg"
+showQr = false
+showSocializations = true
+CVlink = "doc/CV.pdf"
+
+
+[[params.handles]]
+name = "LinkedIn"
+link = "https://www.linkedin.com/in/hugo-verhelst/"
+icon = "linkedin-in"
+
+[[params.handles]]
+name = "GitHub"
+link = "https://github.com/hverhelst/"
+icon = "github"
+
+[[params.handles]]
+name = "ORCID"
+link = "https://orcid.org/0000-0001-8677-862X"
+icon = "orcid"
+
+[[params.handles]]
+name = "Google Scholar"
+link = "https://scholar.google.com/citations?user=7cTDjzYAAAAJ&hl=en&oi=ao"
+icon = "google-scholar"
+
+[[params.handles]]
+name = "BlueSky"
+link = "https://bsky.app/profile/hugoverhelst.nl"
+icon = "bluesky"
+
+# Contact form instead of a published address.
+#
+# The key is deliberately empty here: it is injected at build time from the
+# WEB3FORMS_KEY repository secret, via HUGO_PARAMS_CONTACT_KEY in
+# .github/workflows/hugo.yml, so it never enters this repository's history.
+#
+# It is not a secret in the usual sense — the browser has to send it, so it is
+# in the deployed HTML and visible in View Source either way. Keeping it out of
+# git means rotating it actually retires the old one.
+#
+# TODO before merging: create the key at https://web3forms.com and add it as the
+# WEB3FORMS_KEY repository secret. Until then the site has no contact route.
+#
+# To preview locally:  HUGO_PARAMS_CONTACT_KEY=your-key hugo server
+[params.contact]
+provider = "web3forms"
+key = ""
+subject = "Message from hugoverhelst.nl"
+# Rendered immediately above the form, so it appears only when the form
+# does. Prose in the page body would promise a form that is not there
+# whenever the key is unset.
+note = "The quickest way to reach me. Messages go straight to my inbox, by way of Web3Forms, which handles the delivery."
+
+[[params.extraPages]]
+label = "Contact"
+url = "/contact/"
+
+[params.meta]
+description = "Hugo Verhelst's personal website"
+author      = "Hugo Verhelst"
+favicon     = true
+
+[markup.goldmark.renderer]
+unsafe = true

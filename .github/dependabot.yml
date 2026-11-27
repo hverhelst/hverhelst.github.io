@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Bumps themes/dbaw when the theme moves. Dependabot only advances the
+  # submodule pointer — it cannot copy the issue forms, which have to live in
+  # this repository. That is deliberate: the data-checks run on Dependabot's
+  # pull request fails if the vendored forms have fallen behind, and names the
+  # one command that brings them back in line.
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
