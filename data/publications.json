@@ -283,4 +283,20 @@
 		},
 		"featured":true
 	}
+	,
+	{
+		"cite-key": "Verhelst2026",
+		"entry-type": "article",
+		"description": {
+			"author": "H. M. Verhelst, L. Greco, A. Reali",
+			"title": "Adaptive isogeometric analysis of high-order phase-field fracture based on THB-splines",
+			"journal": "Computer Methods in Applied Mechanics and Engineering",
+			"volume": "460",
+			"pages": "119103",
+			"year": "2026",
+			"url": "https://doi.org/10.1016/j.cma.2026.119103",
+			"abstract": "In recent decades, the study of fracture propagation in solids has increasingly relied on phase-field models. Several recent contributions have highlighted the potential of this approach in both static and dynamic frameworks. However, a major limitation remains the high computational cost. Two main strategies have been identified to mitigate this issue: the use of locally refined meshes and the adoption of higher-order models. In this work, leveraging Truncated Hierarchical B-splines (THB-splines), we introduce adaptive simulations of higher-order phase-field formulations (AT1 and AT2), focusing primarily on two-dimensional fracture problems."
+		},
+		"featured": false
+	}
 ]
