@@ -420,4 +420,15 @@
 		"featured":true,
 		"invited":false
 	}
+	,
+	{
+		"name": "The 14th International Conference on Isogeometric Analysis",
+		"location": "Tokyo, Japan",
+		"title": "Reduced-Order Modeling via Isogeometric Operator Inference -- Application to the Cahn–Hilliard equation",
+		"start": "2026-10-11",
+		"end": "2026-10-14",
+		"url": "https://iga2026.usacm.org/",
+		"featured": false,
+		"invited": false
+	}
 ]
