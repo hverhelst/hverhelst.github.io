@@ -3,6 +3,13 @@ description: Add a talk, poster or other conference appearance.
 title: "[conference] "
 labels: ["data-entry", "conferences"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Adds a conference contribution: a talk, a poster or another
+        appearance. Leave the end date empty for a single-day event, and tick
+        "Invited" if you were invited to speak.
+
   - type: input
     id: name
     attributes:
@@ -34,7 +41,7 @@ body:
     attributes:
       label: Start date
       description: YYYY-MM-DD.
-      placeholder: 2026-07-19
+      placeholder: "2026-07-19"
     validations:
       required: true
 
@@ -43,7 +50,7 @@ body:
     attributes:
       label: End date
       description: YYYY-MM-DD. Leave empty for a single-day event.
-      placeholder: 2026-07-24
+      placeholder: "2026-07-24"
 
   - type: input
     id: url
