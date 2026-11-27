@@ -129,7 +129,7 @@ body:
     attributes:
       label: Defence date
       description: For `thesis`, as YYYY-MM-DD.
-      placeholder: 2023-12-22
+      placeholder: "2023-12-22"
 
   - type: input
     id: eprint
